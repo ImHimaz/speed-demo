@@ -1,0 +1,40 @@
+// Label: Tour
+// elite/video → Block Classes, under "Tour". Centred, rounded, a soft
+// shadow; a big white play button.
+@use "../../styles/abstracts" as *;
+
+.elite-section--tour .elite-video--tour {
+	max-width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+	border-radius: 16px;
+	background: var(--wp--preset--color--navy);
+	box-shadow: 0 30px 60px -30px rgb(14 21 37 / 0.35);
+
+	.elite-video__play {
+		display: grid;
+		place-items: center;
+		width: 72px;
+		height: 72px;
+		padding: 0;
+		border-radius: 50%;
+		background: var(--wp--preset--color--base);
+		box-shadow: 0 10px 40px rgb(0 0 0 / 0.3);
+		color: var(--wp--preset--color--primary);
+		transition: transform $duration-fast $ease;
+
+		svg {
+			width: 28px;
+			height: 28px;
+		}
+
+		@include media-breakpoint-up(md) {
+			width: 92px;
+			height: 92px;
+		}
+	}
+
+	.elite-video__start:hover .elite-video__play {
+		transform: scale(1.08);
+	}
+}

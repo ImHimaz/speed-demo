@@ -1,0 +1,53 @@
+// Label: FAQ
+// elite/accordion → Block Classes, under "FAQ". Lines between questions; a
+// round grey plus that turns into a blue minus when open.
+@use "../../styles/abstracts" as *;
+
+.elite-section--faq .elite-accordion--faq {
+
+	.elite-accordion__item {
+		border-bottom: 1px solid var(--wp--preset--color--line);
+
+		&:first-child {
+			border-top: 1px solid var(--wp--preset--color--line);
+		}
+	}
+
+	.elite-accordion__heading {
+		margin: 0;
+	}
+
+	.elite-accordion__button {
+		gap: 20px;
+		padding: 22px 0;
+		color: var(--wp--preset--color--contrast);
+
+		@include text-style("title-5");
+	}
+
+	.elite-accordion__indicator {
+		display: grid;
+		flex: none;
+		place-items: center;
+		width: 32px;
+		height: 32px;
+		padding: 9px;
+		box-sizing: border-box;
+		border-radius: 50%;
+		background: var(--wp--preset--color--surface);
+		transition: background-color $duration-fast $ease, color $duration-fast $ease;
+	}
+
+	.elite-accordion__item.is-open .elite-accordion__indicator {
+		background: var(--wp--preset--color--primary);
+		color: var(--wp--preset--color--base);
+	}
+
+	.elite-accordion__body {
+
+		p {
+			margin: 0;
+			padding: 0 48px 24px 0;
+		}
+	}
+}

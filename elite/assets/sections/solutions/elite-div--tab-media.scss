@@ -1,0 +1,31 @@
+// Label: Tab Media
+// elite/div → Block Classes, under "Solutions". The image on a soft blue
+// to mint panel; under the text on phones and tablets.
+@use "../../styles/abstracts" as *;
+
+.elite-section--solutions .elite-div--tab-media {
+	margin-top: 32px;
+	border-radius: 16px;
+	background: linear-gradient(135deg, var(--wp--preset--color--primary-soft), var(--wp--preset--color--secondary-soft));
+
+	> .div-inner {
+		padding: 20px;
+	}
+
+	img {
+		border-radius: 12px;
+		box-shadow: 0 30px 60px -30px rgb(14 21 37 / 0.35);
+	}
+
+	@include media-breakpoint-up(lg) {
+		margin-top: 0;
+
+		> .div-inner {
+			padding: 36px;
+		}
+	}
+}
+
+.elite-section--solutions .elite-tab-slider--pills .elite-heading {
+	margin: 0;
+}

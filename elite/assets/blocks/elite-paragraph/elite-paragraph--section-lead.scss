@@ -1,0 +1,7 @@
+// Label: Section Lead
+// elite/paragraph → Block Classes. The line under a section title.
+@use "../../styles/abstracts" as *;
+
+.elite-paragraph--section-lead {
+	margin: 16px 0 0;
+}

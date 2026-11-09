@@ -1,0 +1,16 @@
+// Label: FAQ Intro
+// elite/column → Block Classes, under "FAQ". Title, lead and a button;
+// space under it on phones and tablets.
+@use "../../styles/abstracts" as *;
+
+.elite-section--faq .elite-column--faq-intro {
+	margin-bottom: 32px;
+
+	.elite-paragraph--section-lead {
+		margin-bottom: 24px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 0;
+	}
+}

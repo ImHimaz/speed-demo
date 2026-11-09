@@ -1,0 +1,8 @@
+// Label: Footer Legal
+// elite/paragraph → Block Classes, under "Footer". The small bottom text.
+@use "../../styles/abstracts" as *;
+
+.elite-section--footer .elite-paragraph--footer-legal {
+
+	@include text-style("small");
+}

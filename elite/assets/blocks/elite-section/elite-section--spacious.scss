@@ -1,0 +1,16 @@
+// Label: Spacious
+// elite/section → Block Classes (multi-select).
+// Example of spacing in a modifier. Values set in the CMS
+// (Spacing - Top/Bottom) always win over these.
+
+.elite-section--spacious {
+	// Margin: use these variables (plain margin-* loses to WordPress layout CSS).
+	--section-margin-top: 50px;
+	--section-margin-bottom: 50px;
+
+	// Padding: on .section-inner.
+	.section-inner {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}

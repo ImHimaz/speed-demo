@@ -1,0 +1,22 @@
+// Label: Footer Brand
+// elite/column → Block Classes, under "Footer". The light logo, a line and
+// the social links; space under it until the columns sit beside it.
+@use "../../styles/abstracts" as *;
+
+.elite-section--footer .elite-column--footer-brand {
+	margin-bottom: 8px;
+
+	.site-footer__logo {
+		margin: 0;
+
+		img {
+			display: block;
+			height: auto;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 0;
+		padding-right: 64px;
+	}
+}

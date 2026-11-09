@@ -1,0 +1,14 @@
+// Label: Outline
+// elite/button → Block Classes (multi-select).
+@use "../../styles/abstracts" as *;
+
+.elite-button--outline {
+
+	@include button-look(
+		transparent,
+		var(--wp--preset--color--contrast),
+		$border-color: currentcolor,
+		$hover-background: var(--wp--preset--color--contrast),
+		$hover-color: var(--wp--preset--color--base)
+	);
+}

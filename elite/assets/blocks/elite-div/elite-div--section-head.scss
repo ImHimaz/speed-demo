@@ -1,0 +1,14 @@
+// Label: Section Head
+// elite/div → Block Classes. A centred section intro: eyebrow, title and an
+// optional lead, with room before the content.
+@use "../../styles/abstracts" as *;
+
+.elite-div--section-head {
+	max-width: 680px;
+	margin: 0 auto 40px;
+	text-align: center;
+
+	@include media-breakpoint-up(md) {
+		margin-bottom: 56px;
+	}
+}

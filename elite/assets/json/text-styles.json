@@ -1,0 +1,50 @@
+[
+	{
+		"slug": "title-1",
+		"name": "Title 1"
+	},
+	{
+		"slug": "title-2",
+		"name": "Title 2"
+	},
+	{
+		"slug": "title-3",
+		"name": "Title 3"
+	},
+	{
+		"slug": "title-4",
+		"name": "Title 4"
+	},
+	{
+		"slug": "title-5",
+		"name": "Title 5"
+	},
+	{
+		"slug": "title-6",
+		"name": "Title 6"
+	},
+	{
+		"slug": "lead",
+		"name": "Lead"
+	},
+	{
+		"slug": "body",
+		"name": "Body"
+	},
+	{
+		"slug": "small",
+		"name": "Small"
+	},
+	{
+		"slug": "eyebrow",
+		"name": "Eyebrow"
+	},
+	{
+		"slug": "stat",
+		"name": "Stat"
+	},
+	{
+		"slug": "quote",
+		"name": "Quote"
+	}
+]

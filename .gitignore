@@ -1,0 +1,10 @@
+# elite/ has its own .gitignore (node_modules, vendor, build, third-party).
+
+# Third-party plugins (PRO Elements etc.): copied in locally, never committed.
+/plugins/
+
+*.zip
+.DS_Store
+*.log
+node_modules/
+.wp-env.override.json

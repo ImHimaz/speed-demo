@@ -1,0 +1,16 @@
+// Label: Secondary
+// core/button → Block Classes. White with a light border, as Elite
+// Button's Secondary (e.g. "Sign in" in the mobile menu).
+@use "../../styles/abstracts" as *;
+
+.core-button--secondary .wp-block-button__link {
+	border: 2px solid var(--wp--preset--color--line);
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+
+	&:hover {
+		border-color: var(--wp--preset--color--contrast);
+		background: var(--wp--preset--color--base);
+		color: var(--wp--preset--color--contrast);
+	}
+}

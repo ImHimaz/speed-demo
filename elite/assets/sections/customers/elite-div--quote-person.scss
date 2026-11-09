@@ -1,0 +1,7 @@
+// Label: Quote Person
+// elite/div → Block Classes, under "Customers". Name over role.
+@use "../../styles/abstracts" as *;
+
+.elite-section--customers .elite-div--quote-person p {
+	margin: 0;
+}

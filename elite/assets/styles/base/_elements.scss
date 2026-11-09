@@ -1,0 +1,38 @@
+// Plain HTML elements, site-wide. Keep selectors low (`:where()`, element
+// names) so block classes and editor settings win.
+@use "../abstracts" as *;
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+:where(img, svg, video) {
+	max-width: 100%;
+	height: auto;
+}
+
+.screen-reader-text:focus {
+	clip-path: none;
+}
+
+// Section rhythm: the space above and below each home page section
+// (sections use it on .section-inner).
+:root {
+	--space-section: 72px;
+
+	@include media-breakpoint-up(md) {
+		--space-section: 96px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		--space-section: 120px;
+	}
+}

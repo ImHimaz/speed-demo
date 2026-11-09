@@ -1,0 +1,8 @@
+// Label: Tab Text
+// elite/paragraph → Block Classes, under "Solutions". The line under a
+// tab's title.
+@use "../../styles/abstracts" as *;
+
+.elite-section--solutions .elite-paragraph--tab-text {
+	margin: 14px 0 0;
+}

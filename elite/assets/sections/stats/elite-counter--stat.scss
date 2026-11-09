@@ -1,0 +1,13 @@
+// Label: Stat
+// elite/counter → Block Classes, under "Stats". White number, mint suffix.
+@use "../../styles/abstracts" as *;
+
+.elite-section--stats .elite-counter--stat {
+	margin: 0;
+	color: var(--wp--preset--color--base);
+	font-variant-numeric: tabular-nums;
+
+	.elite-counter__suffix {
+		color: var(--wp--preset--color--secondary);
+	}
+}

@@ -1,0 +1,9 @@
+// Label: Eyebrow
+// elite/paragraph → Block Classes. The small blue label over a section
+// title (pair with the Eyebrow text style).
+@use "../../styles/abstracts" as *;
+
+.elite-paragraph--eyebrow {
+	margin: 0 0 14px;
+	color: var(--wp--preset--color--primary);
+}

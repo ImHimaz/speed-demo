@@ -1,0 +1,18 @@
+// Label: Customers
+// elite/section → Block Classes. Testimonials: a title with the slider's
+// arrows level with it (from tablets), white quote cards on grey, dots
+// under them. The section clips the slider's overflow.
+@use "../../styles/abstracts" as *;
+
+.elite-section--customers {
+	overflow: hidden;
+	background: var(--wp--preset--color--surface);
+
+	> .section-inner {
+		padding-block: var(--space-section);
+	}
+
+	.elite-heading {
+		margin: 0;
+	}
+}

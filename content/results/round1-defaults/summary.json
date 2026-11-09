@@ -1,0 +1,350 @@
+{
+ "elite": {
+  "score": {
+   "median": 97,
+   "min": 97,
+   "max": 98
+  },
+  "fcp": {
+   "median": 1219.51665,
+   "min": 1214.00325,
+   "max": 1225.3575
+  },
+  "lcp": {
+   "median": 2493.2210999999998,
+   "min": 2425.3574999999996,
+   "max": 2644.5166500000005
+  },
+  "tbt": {
+   "median": 0,
+   "min": 0,
+   "max": 15.5
+  },
+  "cls": {
+   "median": 0,
+   "min": 0,
+   "max": 0
+  },
+  "si": {
+   "median": 1223.08035,
+   "min": 1214.00325,
+   "max": 1388.3985440015479
+  },
+  "ttfb": {
+   "median": 135,
+   "min": 126,
+   "max": 160
+  },
+  "requests": {
+   "median": 39,
+   "min": 39,
+   "max": 39
+  },
+  "totalKB": {
+   "median": 218,
+   "min": 218,
+   "max": 218
+  },
+  "jsKB": {
+   "median": 30,
+   "min": 30,
+   "max": 30
+  },
+  "cssKB": {
+   "median": 19,
+   "min": 19,
+   "max": 19
+  },
+  "jsFiles": {
+   "median": 7,
+   "min": 7,
+   "max": 7
+  },
+  "cssFiles": {
+   "median": 10,
+   "min": 10,
+   "max": 10
+  },
+  "dom": {
+   "median": 598,
+   "min": 598,
+   "max": 598
+  },
+  "mainThreadMs": {
+   "median": 1427.3400000000006,
+   "min": 1301.9800000000018,
+   "max": 1494.696000000002
+  },
+  "jsBootMs": {
+   "median": 238.77999999999963,
+   "min": 218.79999999999976,
+   "max": 291.98
+  },
+  "runs": [
+   {
+    "score": 98,
+    "fcp": 1225.3575,
+    "lcp": 2425.3574999999996,
+    "tbt": 0,
+    "cls": 0,
+    "si": 1225.3575,
+    "ttfb": 160,
+    "requests": 39,
+    "totalKB": 218,
+    "jsKB": 30,
+    "cssKB": 19,
+    "jsFiles": 7,
+    "cssFiles": 10,
+    "dom": 598,
+    "mainThreadMs": 1494.696000000002,
+    "jsBootMs": 291.98
+   },
+   {
+    "score": 97,
+    "fcp": 1218.2211,
+    "lcp": 2493.2210999999998,
+    "tbt": 15.5,
+    "cls": 0,
+    "si": 1388.3985440015479,
+    "ttfb": 144,
+    "requests": 39,
+    "totalKB": 218,
+    "jsKB": 30,
+    "cssKB": 19,
+    "jsFiles": 7,
+    "cssFiles": 10,
+    "dom": 598,
+    "mainThreadMs": 1380.8640000000016,
+    "jsBootMs": 258.5079999999999
+   },
+   {
+    "score": 97,
+    "fcp": 1214.00325,
+    "lcp": 2489.00325,
+    "tbt": 0,
+    "cls": 0,
+    "si": 1214.00325,
+    "ttfb": 129,
+    "requests": 39,
+    "totalKB": 218,
+    "jsKB": 30,
+    "cssKB": 19,
+    "jsFiles": 7,
+    "cssFiles": 10,
+    "dom": 598,
+    "mainThreadMs": 1432.2160000000008,
+    "jsBootMs": 238.77999999999963
+   },
+   {
+    "score": 97,
+    "fcp": 1219.51665,
+    "lcp": 2644.5166500000005,
+    "tbt": 0,
+    "cls": 0,
+    "si": 1219.51665,
+    "ttfb": 126,
+    "requests": 39,
+    "totalKB": 218,
+    "jsKB": 30,
+    "cssKB": 19,
+    "jsFiles": 7,
+    "cssFiles": 10,
+    "dom": 598,
+    "mainThreadMs": 1301.9800000000018,
+    "jsBootMs": 218.79999999999976
+   },
+   {
+    "score": 97,
+    "fcp": 1223.08035,
+    "lcp": 2498.0803499999997,
+    "tbt": 0,
+    "cls": 0,
+    "si": 1223.08035,
+    "ttfb": 135,
+    "requests": 39,
+    "totalKB": 218,
+    "jsKB": 30,
+    "cssKB": 19,
+    "jsFiles": 7,
+    "cssFiles": 10,
+    "dom": 598,
+    "mainThreadMs": 1427.3400000000006,
+    "jsBootMs": 229.88399999999982
+   }
+  ]
+ },
+ "elementor": {
+  "score": {
+   "median": 87,
+   "min": 83,
+   "max": 91
+  },
+  "fcp": {
+   "median": 2431.8564,
+   "min": 2428.2324000000003,
+   "max": 2577.8244
+  },
+  "lcp": {
+   "median": 3539.7012999999997,
+   "min": 3031.8594,
+   "max": 4175.403400000001
+  },
+  "tbt": {
+   "median": 9,
+   "min": 8,
+   "max": 18
+  },
+  "cls": {
+   "median": 0.0001342132898459364,
+   "min": 0.0001342132898459364,
+   "max": 0.0001342132898459364
+  },
+  "si": {
+   "median": 2431.8564,
+   "min": 2428.2324000000003,
+   "max": 2577.8244
+  },
+  "ttfb": {
+   "median": 229,
+   "min": 207,
+   "max": 242
+  },
+  "requests": {
+   "median": 73,
+   "min": 73,
+   "max": 73
+  },
+  "totalKB": {
+   "median": 499,
+   "min": 499,
+   "max": 499
+  },
+  "jsKB": {
+   "median": 294,
+   "min": 294,
+   "max": 294
+  },
+  "cssKB": {
+   "median": 52,
+   "min": 52,
+   "max": 52
+  },
+  "jsFiles": {
+   "median": 24,
+   "min": 24,
+   "max": 24
+  },
+  "cssFiles": {
+   "median": 28,
+   "min": 28,
+   "max": 28
+  },
+  "dom": {
+   "median": 847,
+   "min": 847,
+   "max": 847
+  },
+  "mainThreadMs": {
+   "median": 1730.1599999999978,
+   "min": 1693.5880000000002,
+   "max": 1814.8959999999972
+  },
+  "jsBootMs": {
+   "median": 341.85199999999867,
+   "min": 337.66799999999944,
+   "max": 345.6599999999978
+  },
+  "runs": [
+   {
+    "score": 87,
+    "fcp": 2577.8244,
+    "lcp": 3494.055300000001,
+    "tbt": 9,
+    "cls": 0.0001342132898459364,
+    "si": 2577.8244,
+    "ttfb": 207,
+    "requests": 73,
+    "totalKB": 499,
+    "jsKB": 294,
+    "cssKB": 52,
+    "jsFiles": 24,
+    "cssFiles": 28,
+    "dom": 847,
+    "mainThreadMs": 1814.8959999999972,
+    "jsBootMs": 344.79599999999795
+   },
+   {
+    "score": 83,
+    "fcp": 2431.8564,
+    "lcp": 4175.403400000001,
+    "tbt": 18,
+    "cls": 0.0001342132898459364,
+    "si": 2431.8564,
+    "ttfb": 242,
+    "requests": 73,
+    "totalKB": 499,
+    "jsKB": 294,
+    "cssKB": 52,
+    "jsFiles": 24,
+    "cssFiles": 28,
+    "dom": 847,
+    "mainThreadMs": 1725.1919999999982,
+    "jsBootMs": 337.66799999999944
+   },
+   {
+    "score": 87,
+    "fcp": 2431.1148,
+    "lcp": 3543.2651000000005,
+    "tbt": 9,
+    "cls": 0.0001342132898459364,
+    "si": 2431.1148,
+    "ttfb": 239,
+    "requests": 73,
+    "totalKB": 499,
+    "jsKB": 294,
+    "cssKB": 52,
+    "jsFiles": 24,
+    "cssFiles": 28,
+    "dom": 847,
+    "mainThreadMs": 1693.5880000000002,
+    "jsBootMs": 337.6759999999994
+   },
+   {
+    "score": 91,
+    "fcp": 2431.8594,
+    "lcp": 3031.8594,
+    "tbt": 8,
+    "cls": 0.0001342132898459364,
+    "si": 2431.8594,
+    "ttfb": 229,
+    "requests": 73,
+    "totalKB": 499,
+    "jsKB": 294,
+    "cssKB": 52,
+    "jsFiles": 24,
+    "cssFiles": 28,
+    "dom": 847,
+    "mainThreadMs": 1730.1599999999978,
+    "jsBootMs": 345.6599999999978
+   },
+   {
+    "score": 88,
+    "fcp": 2428.2324000000003,
+    "lcp": 3539.7012999999997,
+    "tbt": 8.5,
+    "cls": 0.0001342132898459364,
+    "si": 2428.2324000000003,
+    "ttfb": 226,
+    "requests": 73,
+    "totalKB": 499,
+    "jsKB": 294,
+    "cssKB": 52,
+    "jsFiles": 24,
+    "cssFiles": 28,
+    "dom": 847,
+    "mainThreadMs": 1795.5639999999987,
+    "jsBootMs": 341.85199999999867
+   }
+  ]
+ }
+}

@@ -1,0 +1,9 @@
+// Label: Hero Note
+// elite/paragraph → Block Classes, under "Hero". The small grey line under
+// the buttons.
+@use "../../styles/abstracts" as *;
+
+.elite-section--hero .elite-paragraph--hero-note {
+	margin: 16px 0 0;
+	color: var(--wp--preset--color--muted);
+}

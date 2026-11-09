@@ -1,0 +1,13 @@
+// Label: Footer Links
+// core/list → Block Classes, under "Footer". A column's links, no bullets.
+@use "../../styles/abstracts" as *;
+
+.elite-section--footer .core-list--footer-links {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		margin: 9px 0;
+	}
+}

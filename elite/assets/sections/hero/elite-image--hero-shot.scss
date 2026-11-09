@@ -1,0 +1,23 @@
+// Label: Hero Shot
+// elite/image → Block Classes, under "Hero". The product image: wide,
+// rounded at the top, a blue glow, flush with the section's bottom.
+@use "../../styles/abstracts" as *;
+
+.elite-section--hero .elite-image--hero-shot {
+	max-width: 1100px;
+	margin: 48px auto calc(-1 * var(--space-section));
+
+	img {
+		width: 100%;
+		border-radius: 14px 14px 0 0;
+		box-shadow: 0 -10px 80px -20px rgb(61 90 254 / 0.35);
+	}
+
+	@include media-breakpoint-up(md) {
+		margin-top: 64px;
+
+		img {
+			border-radius: 18px 18px 0 0;
+		}
+	}
+}

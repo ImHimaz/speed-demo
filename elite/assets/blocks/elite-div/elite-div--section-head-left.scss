@@ -1,0 +1,12 @@
+// Label: Section Head (left)
+// elite/div → Block Classes. A left-aligned section intro: eyebrow and
+// title.
+@use "../../styles/abstracts" as *;
+
+.elite-div--section-head-left {
+	margin-bottom: 32px;
+
+	@include media-breakpoint-up(md) {
+		margin-bottom: 36px;
+	}
+}

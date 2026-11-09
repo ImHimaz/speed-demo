@@ -1,0 +1,15 @@
+// Label: Blog
+// elite/section → Block Classes. The latest three posts as cards.
+@use "../../styles/abstracts" as *;
+
+.elite-section--blog {
+
+	> .section-inner {
+		padding-top: 0;
+		padding-bottom: var(--space-section);
+	}
+
+	.elite-heading {
+		margin: 0;
+	}
+}

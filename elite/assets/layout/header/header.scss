@@ -1,0 +1,324 @@
+// The "header" template part (pattern header-default): a sticky white bar
+// (Elite Section › Elite Div) with the logo, the menu (two dropdowns) and
+// "Sign in" / "Start free".
+// Mobile first: the menu opens from a button (WordPress's Navigation
+// overlay, full screen); from the laptop width (lg) the links show in the
+// bar and the dropdowns open on hover or keyboard focus.
+@use "../../styles/abstracts" as *;
+
+$header-height: 68px;
+$header-height-lg: 76px;
+
+// Section links (#tabs, #blog…) land below the sticky header.
+html {
+	scroll-padding-top: $header-height-lg + 8px;
+}
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: z(header);
+	border-bottom: 1px solid var(--wp--preset--color--line);
+
+	// The frosted white is a layer behind the bar: a backdrop-filter on the
+	// header itself would trap the full-screen menu inside the header.
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: rgb(255 255 255 / 0.92);
+		backdrop-filter: blur(12px);
+	}
+
+	// Below the admin bar when signed in (fixed only from 601px, as WordPress).
+	@media screen and (min-width: 601px) {
+		top: var(--wp-admin--admin-bar--height, 0);
+	}
+}
+
+
+.elite-section--header .site-header__logo {
+	flex-shrink: 0;
+	margin: 0;
+
+	img {
+		display: block;
+		height: auto;
+	}
+}
+
+
+// The menu (two classes: WordPress's navigation styles set link colours).
+.elite-section--header .site-header__nav {
+
+	@include text-style("nav");
+
+	// Menu and close buttons: a 26px icon in a 44px tap area.
+	.wp-block-navigation__responsive-container-open,
+	.wp-block-navigation__responsive-container-close {
+		box-sizing: content-box;
+		margin: -9px;
+		padding: 9px;
+		color: var(--wp--preset--color--contrast);
+
+		svg {
+			width: 26px;
+			height: 26px;
+		}
+	}
+
+	// Only in the open menu: the logo at its top, the buttons under the links.
+	.site-header__menu-logo,
+	.site-header__menu-cta {
+		display: none;
+	}
+
+	// Open (phones and tablets): white, full screen; the logo and close
+	// button where the bar has them, then the links large with each
+	// dropdown's links under it, then the two buttons.
+	.wp-block-navigation__responsive-container.is-menu-open {
+		padding: 0 var(--wp--style--root--padding-right) 32px var(--wp--style--root--padding-left);
+
+		.wp-block-navigation__responsive-close {
+			max-width: none;
+		}
+
+		.wp-block-navigation__responsive-container-close {
+			top: ($header-height - 44px) * 0.5 + 9px;
+			right: 0;
+		}
+
+		.wp-block-navigation__responsive-container-content {
+			align-items: stretch;
+			gap: 0;
+			padding-top: 0;
+		}
+
+		.site-header__menu-logo {
+			display: flex;
+			align-items: center;
+			min-height: $header-height;
+			margin: 0 0 8px;
+
+			img {
+				display: block;
+				height: auto;
+			}
+		}
+
+		.wp-block-navigation__container {
+			align-items: stretch;
+			gap: 0;
+		}
+
+		.wp-block-navigation__container > .wp-block-navigation-item {
+			align-items: stretch;
+			border-bottom: 1px solid var(--wp--preset--color--line);
+		}
+
+		.wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+			padding: 18px 0;
+			color: var(--wp--preset--color--contrast);
+
+			@include text-style("nav-mobile");
+		}
+
+		// A dropdown's links, under its label.
+		.wp-block-navigation__submenu-container {
+			gap: 0;
+			padding: 0 0 12px;
+		}
+
+		.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+			padding: 9px 0;
+			color: var(--wp--preset--color--body-text);
+		}
+
+		.wp-block-navigation-item__description {
+			display: none;
+		}
+
+		.site-header__menu-cta {
+			display: flex;
+			gap: 12px;
+			margin-top: auto;
+			padding-top: 32px;
+
+			.wp-block-button,
+			.wp-block-button__link {
+				width: 100%;
+			}
+
+			.wp-block-button__link {
+				box-sizing: border-box;
+				text-align: center;
+			}
+		}
+	}
+
+	// WordPress shows the menu button only below 600px: up to the laptop
+	// width here.
+	.wp-block-navigation__responsive-container-open:not(.always-shown) {
+		display: flex;
+	}
+
+	.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+		display: none;
+	}
+
+	@include media-breakpoint-up(lg) {
+
+		.wp-block-navigation__responsive-container-open:not(.always-shown) {
+			display: none;
+		}
+
+		.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+			display: block;
+		}
+
+		.wp-block-navigation__container {
+			gap: 4px;
+		}
+
+		// Top-level links: a soft pill on hover.
+		.wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+			padding: 10px 12px;
+			border-radius: 8px;
+			color: var(--wp--preset--color--contrast);
+			transition: background-color $duration-fast $ease;
+		}
+
+		.wp-block-navigation__container > .wp-block-navigation-item:hover > .wp-block-navigation-item__content,
+		.wp-block-navigation__container > .wp-block-navigation-item:focus-within > .wp-block-navigation-item__content {
+			background: var(--wp--preset--color--surface);
+		}
+
+		// The dropdown arrow inside the label's pill, at its right (room made
+		// for it; as specific as the top-level links' padding, and after it).
+		// WordPress turns its icon while the dropdown is open.
+		.wp-block-navigation__container > .wp-block-navigation-submenu > .wp-block-navigation-item__content {
+			padding-right: 32px;
+		}
+
+		// Above the link: WordPress gives a hovered link z-index 1 (a flex
+		// item, so it applies), which would cover the arrow with its pill.
+		.wp-block-navigation__submenu-icon {
+			position: absolute;
+			z-index: 2;
+			top: 50%;
+			right: 12px;
+			width: 12px;
+			height: 12px;
+			margin: -6px 0 0;
+			padding: 0;
+			color: var(--wp--preset--color--contrast);
+			pointer-events: none;
+
+			svg {
+				width: 12px;
+				height: 12px;
+				stroke-width: 2;
+			}
+		}
+
+		// The dropdown: a white card under the label, fading up.
+		.wp-block-navigation__submenu-container {
+			left: -12px !important;
+			width: 340px !important;
+			min-width: 0 !important;
+			padding: 10px;
+			border: 1px solid var(--wp--preset--color--line) !important;
+			border-radius: 16px;
+			background: var(--wp--preset--color--base) !important;
+			box-shadow: 0 30px 60px -30px rgb(14 21 37 / 0.35);
+			transform: translateY(8px);
+			transition: opacity $duration-fast $ease, transform $duration-fast $ease, visibility $duration-fast $ease;
+		}
+
+		.wp-block-navigation-submenu:hover > .wp-block-navigation__submenu-container,
+		.wp-block-navigation-submenu:focus-within > .wp-block-navigation__submenu-container {
+			transform: none;
+		}
+
+		// Each link: a coloured square, the label and its line (`a`: above
+		// WordPress's flex rule for submenu links).
+		.wp-block-navigation__submenu-container > .wp-block-navigation-item > a.wp-block-navigation-item__content {
+			display: grid;
+			grid-template-columns: 36px 1fr;
+			column-gap: 14px;
+			padding: 12px;
+			border-radius: 10px;
+			color: var(--wp--preset--color--contrast);
+			transition: background-color $duration-fast $ease;
+
+			&::before {
+				content: "";
+				grid-row: 1 / span 2;
+				grid-column: 1;
+				width: 36px;
+				height: 36px;
+				border-radius: 10px;
+				background: var(--wp--preset--color--primary-soft);
+			}
+
+			&:hover {
+				background: var(--wp--preset--color--surface);
+			}
+		}
+
+		.wp-block-navigation__submenu-container > .wp-block-navigation-item:nth-child(4n + 2) > a.wp-block-navigation-item__content::before {
+			background: var(--wp--preset--color--secondary-soft);
+		}
+
+		.wp-block-navigation__submenu-container > .wp-block-navigation-item:nth-child(4n + 3) > a.wp-block-navigation-item__content::before {
+			background: var(--wp--preset--color--accent-soft);
+		}
+
+		.wp-block-navigation__submenu-container > .wp-block-navigation-item:nth-child(4n + 4) > a.wp-block-navigation-item__content::before {
+			background: var(--wp--preset--color--amber-soft);
+		}
+
+		.wp-block-navigation__submenu-container .wp-block-navigation-item__label,
+		.wp-block-navigation__submenu-container .wp-block-navigation-item__description {
+			grid-column: 2;
+		}
+
+		.wp-block-navigation-item__description {
+			display: block;
+			margin-top: 2px;
+			color: var(--wp--preset--color--muted);
+
+			@include text-style("small");
+			font-weight: 500;
+			line-height: 1.4;
+		}
+	}
+}
+
+.elite-section--header .site-header__nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content,
+.elite-section--header .site-header__nav .wp-block-navigation-item__content {
+	text-decoration: none;
+}
+
+// Phones: the menu button sits at the right edge (the actions are hidden).
+.elite-div--header-bar > .div-inner > .site-header__nav {
+	margin-left: auto;
+
+	@include media-breakpoint-up(md) {
+		order: 1;
+		margin-left: 0;
+	}
+
+	@include media-breakpoint-up(lg) {
+		order: 0;
+		margin-left: 24px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.elite-section--header .site-header__nav * {
+		transition: none !important;
+	}
+}

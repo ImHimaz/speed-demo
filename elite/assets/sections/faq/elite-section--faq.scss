@@ -1,0 +1,15 @@
+// Label: FAQ
+// elite/section → Block Classes. Intro on the left (from laptops), the
+// accordion on the right.
+@use "../../styles/abstracts" as *;
+
+.elite-section--faq {
+
+	> .section-inner {
+		padding-block: var(--space-section);
+	}
+
+	.elite-heading {
+		margin: 0;
+	}
+}

@@ -1,0 +1,8 @@
+// Label: Footer Social
+// elite/div → Block Classes, under "Footer". The social buttons in a row.
+@use "../../styles/abstracts" as *;
+
+.elite-section--footer .elite-div--footer-social > .div-inner {
+	display: flex;
+	gap: 10px;
+}

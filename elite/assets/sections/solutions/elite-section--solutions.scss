@@ -1,0 +1,8 @@
+// Label: Solutions
+// elite/section → Block Classes. "Built for every team": a tab slider of
+// teams, each its text and a product image.
+@use "../../styles/abstracts" as *;
+
+.elite-section--solutions > .section-inner {
+	padding-block: var(--space-section);
+}

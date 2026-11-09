@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/wp-env.json",
+	"core": null,
+	"phpVersion": "8.3",
+	"testsEnvironment": false,
+	"port": 8894,
+	"plugins": [
+		"../../elite-blocks"
+	],
+	"config": {
+		"WP_DEBUG": true,
+		"WP_DEBUG_DISPLAY": false,
+		"WP_DEBUG_LOG": true,
+		"SCRIPT_DEBUG": false,
+		"WP_ENVIRONMENT_TYPE": "local"
+	},
+	"mappings": {
+		"wp-content/themes/signalry": ".",
+		"demo-media": "../design",
+		"demo-content": "../content"
+	},
+	"lifecycleScripts": {
+		"afterStart": "wp-env run cli wp theme activate signalry"
+	}
+}

@@ -1,0 +1,26 @@
+// Theme colours: the single source for the editor colour palette (all
+// colour pickers, including Elite Blocks') and for SCSS.
+// Add or change a colour here, then run `npm run classes` (it also runs
+// before build/start). Keys are slugs: "primary" becomes
+// `--wp--preset--color--primary`, shown as "Primary" in the editor.
+// Signalry: ink and slate text, an electric blue, mint and coral accents,
+// navy for the dark bands.
+$colors: (
+	"base": #fff,
+	"contrast": #0e1525,
+	"body-text": #3b4558,
+	"muted": #6b7487,
+	"line": #e6e9f0,
+	"surface": #f5f7fb,
+	"primary": #3d5afe,
+	"primary-dark": #2238c9,
+	"primary-soft": #e9edff,
+	"secondary": #16c79a,
+	"secondary-soft": #e2f8f1,
+	"accent": #ff7a59,
+	"accent-soft": #ffeee8,
+	"amber": #f5b83d,
+	"amber-soft": #fff4dc,
+	"navy": #0b1430,
+	"navy-text": #a9b3cc,
+);

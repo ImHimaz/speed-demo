@@ -1,0 +1,14 @@
+// The "footer" template part (pattern footer-default), built with Elite
+// blocks: the section, its brand and link columns and the bottom line each
+// have their own part file here. Links: light grey, white on hover.
+@use "../../styles/abstracts" as *;
+
+.site-footer a {
+	color: inherit;
+	text-decoration: none;
+	transition: color $duration-fast $ease;
+
+	&:hover {
+		color: var(--wp--preset--color--base);
+	}
+}

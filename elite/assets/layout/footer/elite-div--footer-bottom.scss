@@ -1,0 +1,17 @@
+// Label: Footer Bottom
+// elite/div → Block Classes, under "Footer". Copyright and legal links,
+// above a thin line; side by side when there's room.
+@use "../../styles/abstracts" as *;
+
+.elite-section--footer .elite-div--footer-bottom {
+	margin-top: 48px;
+	padding-top: 24px;
+	border-top: 1px solid rgb(255 255 255 / 0.1);
+
+	> .div-inner {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px 24px;
+		justify-content: space-between;
+	}
+}

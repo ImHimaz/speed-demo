@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/wp-env.json",
+	"core": null,
+	"phpVersion": "8.3",
+	"testsEnvironment": false,
+	"port": 8896,
+	"themes": [
+		"https://downloads.wordpress.org/theme/hello-elementor.3.5.2.zip"
+	],
+	"plugins": [
+		"https://downloads.wordpress.org/plugin/elementor.4.3.6.zip",
+		"../plugins/pro-elements"
+	],
+	"config": {
+		"WP_DEBUG": true,
+		"WP_DEBUG_DISPLAY": false,
+		"WP_DEBUG_LOG": true,
+		"SCRIPT_DEBUG": false,
+		"WP_ENVIRONMENT_TYPE": "local"
+	},
+	"mappings": {
+		"demo-media": "../design",
+		"demo-content": "../content"
+	},
+	"lifecycleScripts": {
+		"afterStart": "wp-env run cli wp theme activate hello-elementor"
+	}
+}

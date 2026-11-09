@@ -1,0 +1,17 @@
+// Label: Text Link
+// elite/button → Block Classes (multi-select). A blue text link; add an
+// icon after the text (e.g. Arrow Right) and it nudges on hover.
+@use "../../styles/abstracts" as *;
+
+.elite-button--link .elite-button__link {
+	gap: 6px;
+	min-height: 0;
+	padding: 0;
+	border: 0;
+	color: var(--wp--preset--color--primary);
+
+	&:hover {
+		transform: none;
+		text-decoration: underline;
+	}
+}

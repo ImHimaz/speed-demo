@@ -1,0 +1,9 @@
+// Label: Quote Name
+// elite/paragraph → Block Classes, under "Customers". The customer's name.
+@use "../../styles/abstracts" as *;
+
+.elite-section--customers .elite-paragraph--quote-name {
+	color: var(--wp--preset--color--contrast);
+
+	@include text-style("nav");
+}

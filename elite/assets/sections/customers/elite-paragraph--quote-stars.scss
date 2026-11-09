@@ -1,0 +1,8 @@
+// Label: Quote Stars
+// elite/paragraph → Block Classes, under "Customers". Five amber stars.
+@use "../../styles/abstracts" as *;
+
+.elite-section--customers .elite-paragraph--quote-stars {
+	margin: 0;
+	color: var(--wp--preset--color--amber);
+}

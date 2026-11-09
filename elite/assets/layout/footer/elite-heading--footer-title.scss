@@ -1,0 +1,8 @@
+// Label: Footer Title
+// elite/heading → Block Classes, under "Footer". A link column's name.
+@use "../../styles/abstracts" as *;
+
+.elite-section--footer .elite-heading--footer-title {
+	margin: 0 0 14px;
+	color: var(--wp--preset--color--base);
+}

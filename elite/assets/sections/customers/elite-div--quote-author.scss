@@ -1,0 +1,14 @@
+// Label: Quote Author
+// elite/div → Block Classes, under "Customers". Avatar beside name and
+// role, at the card's bottom.
+@use "../../styles/abstracts" as *;
+
+.elite-section--customers .elite-div--quote-author {
+	margin-top: auto;
+
+	> .div-inner {
+		display: flex;
+		gap: 14px;
+		align-items: center;
+	}
+}

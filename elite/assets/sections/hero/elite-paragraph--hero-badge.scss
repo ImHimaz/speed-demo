@@ -1,0 +1,26 @@
+// Label: Hero Badge
+// elite/paragraph → Block Classes, under "Hero". A pill over the heading;
+// its bold word ("New") in a blue chip.
+@use "../../styles/abstracts" as *;
+
+.elite-section--hero .elite-paragraph--hero-badge {
+	display: inline-flex;
+	gap: 8px;
+	align-items: center;
+	margin: 0 0 22px;
+	padding: 6px 14px 6px 6px;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: $radius-pill;
+	background: var(--wp--preset--color--base);
+
+	@include text-style("small");
+	font-weight: 650;
+
+	strong {
+		padding: 3px 10px;
+		border-radius: $radius-pill;
+		background: var(--wp--preset--color--primary-soft);
+		color: var(--wp--preset--color--primary-dark);
+		font-weight: 750;
+	}
+}

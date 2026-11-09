@@ -1,0 +1,11 @@
+// Label: Dark
+// elite/section → Block Classes (multi-select).
+
+.elite-section--dark {
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+
+	a:where(:not(.wp-element-button)) {
+		color: inherit;
+	}
+}

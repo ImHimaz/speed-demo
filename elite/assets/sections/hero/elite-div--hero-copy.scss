@@ -1,0 +1,14 @@
+// Label: Hero Copy
+// elite/div → Block Classes, under "Hero". The centred text column.
+@use "../../styles/abstracts" as *;
+
+.elite-section--hero .elite-div--hero-copy {
+	max-width: 820px;
+	margin: 0 auto;
+	text-align: center;
+
+	.elite-paragraph--hero-lead {
+		max-width: 620px;
+		margin: 22px auto 0;
+	}
+}

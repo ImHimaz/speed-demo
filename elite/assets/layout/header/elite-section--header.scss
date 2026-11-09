@@ -1,0 +1,9 @@
+// Label: Header
+// elite/section → Block Classes, under "Header". The header's section: no
+// background or padding of its own (the sticky .site-header has the white
+// bar); its container gives the 1200px width.
+@use "../../styles/abstracts" as *;
+
+.elite-section--header > .section-inner {
+	padding-block: 0;
+}

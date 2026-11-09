@@ -1,0 +1,20 @@
+// Label: Blog Head
+// elite/div → Block Classes, under "Blog". The title and "View all posts",
+// on one line when there's room.
+@use "../../styles/abstracts" as *;
+
+.elite-section--blog .elite-div--blog-head {
+	margin-bottom: 36px;
+
+	> .div-inner {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+
+	.elite-div--section-head-left {
+		margin: 0;
+	}
+}

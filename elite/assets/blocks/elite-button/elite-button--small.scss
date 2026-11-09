@@ -1,0 +1,16 @@
+// Label: Small
+// elite/button → Block Classes (multi-select). Combine with a look, e.g.
+// Primary + Small: 42px tall on phones, 44px from tablets.
+@use "../../styles/abstracts" as *;
+
+.elite-button--small .elite-button__link {
+	min-height: 42px;
+	padding: 0 18px;
+
+	@include text-style("button-small");
+
+	@include media-breakpoint-up(md) {
+		min-height: 44px;
+		padding: 0 20px;
+	}
+}

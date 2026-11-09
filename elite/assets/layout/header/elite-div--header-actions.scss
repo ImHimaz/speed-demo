@@ -1,0 +1,19 @@
+// Label: Header Actions
+// elite/div → Block Classes, under "Header". "Sign in" and "Start free":
+// from tablets, at the right (before the menu button until laptops).
+@use "../../styles/abstracts" as *;
+
+.elite-section--header .elite-div--header-actions {
+	display: none;
+	margin-left: auto;
+
+	> .div-inner {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+	}
+
+	@include media-breakpoint-up(md) {
+		display: block;
+	}
+}

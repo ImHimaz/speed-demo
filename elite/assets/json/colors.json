@@ -1,0 +1,87 @@
+[
+	{
+		"slug": "base",
+		"name": "Base",
+		"color": "#fff"
+	},
+	{
+		"slug": "contrast",
+		"name": "Contrast",
+		"color": "#0e1525"
+	},
+	{
+		"slug": "body-text",
+		"name": "Body Text",
+		"color": "#3b4558"
+	},
+	{
+		"slug": "muted",
+		"name": "Muted",
+		"color": "#6b7487"
+	},
+	{
+		"slug": "line",
+		"name": "Line",
+		"color": "#e6e9f0"
+	},
+	{
+		"slug": "surface",
+		"name": "Surface",
+		"color": "#f5f7fb"
+	},
+	{
+		"slug": "primary",
+		"name": "Primary",
+		"color": "#3d5afe"
+	},
+	{
+		"slug": "primary-dark",
+		"name": "Primary Dark",
+		"color": "#2238c9"
+	},
+	{
+		"slug": "primary-soft",
+		"name": "Primary Soft",
+		"color": "#e9edff"
+	},
+	{
+		"slug": "secondary",
+		"name": "Secondary",
+		"color": "#16c79a"
+	},
+	{
+		"slug": "secondary-soft",
+		"name": "Secondary Soft",
+		"color": "#e2f8f1"
+	},
+	{
+		"slug": "accent",
+		"name": "Accent",
+		"color": "#ff7a59"
+	},
+	{
+		"slug": "accent-soft",
+		"name": "Accent Soft",
+		"color": "#ffeee8"
+	},
+	{
+		"slug": "amber",
+		"name": "Amber",
+		"color": "#f5b83d"
+	},
+	{
+		"slug": "amber-soft",
+		"name": "Amber Soft",
+		"color": "#fff4dc"
+	},
+	{
+		"slug": "navy",
+		"name": "Navy",
+		"color": "#0b1430"
+	},
+	{
+		"slug": "navy-text",
+		"name": "Navy Text",
+		"color": "#a9b3cc"
+	}
+]

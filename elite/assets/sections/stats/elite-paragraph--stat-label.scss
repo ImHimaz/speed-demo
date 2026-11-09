@@ -1,0 +1,9 @@
+// Label: Stat Label
+// elite/paragraph → Block Classes, under "Stats". The line under a number.
+@use "../../styles/abstracts" as *;
+
+.elite-section--stats .elite-paragraph--stat-label {
+	margin: 10px 0 0;
+
+	@include text-style("footer");
+}

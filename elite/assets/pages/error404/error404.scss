@@ -1,0 +1,15 @@
+// Page not found (body class "error404"): centred, with the search box
+// (templates/404.html).
+// Classes for blocks in it:
+// npm run add -- pages/error404 <block> <part>
+@use "../../styles/abstracts" as *;
+
+body.error404 main {
+	min-height: 50vh;
+	text-align: center;
+
+	.wp-block-search {
+		max-width: 480px;
+		margin-inline: auto;
+	}
+}

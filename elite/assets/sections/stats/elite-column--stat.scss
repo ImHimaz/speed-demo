@@ -1,0 +1,15 @@
+// Label: Stat
+// elite/column → Block Classes, under "Stats". One counter and its label;
+// a thin line before each from tablets.
+@use "../../styles/abstracts" as *;
+
+.elite-section--stats .elite-column--stat {
+
+	@include media-breakpoint-up(md) {
+
+		> .column-inner {
+			padding-left: 24px;
+			border-left: 1px solid rgb(255 255 255 / 0.12);
+		}
+	}
+}

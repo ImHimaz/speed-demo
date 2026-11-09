@@ -1,0 +1,29 @@
+// Label: Footer
+// elite/section → Block Classes, under "Footer". Navy, light grey text;
+// the columns stack on phones (brand, then links two by two), four link
+// columns across from tablets, beside the brand from laptops.
+@use "../../styles/abstracts" as *;
+
+.elite-section--footer {
+	background: var(--wp--preset--color--navy);
+	color: var(--wp--preset--color--navy-text);
+
+	@include text-style("footer");
+
+	> .section-inner {
+		padding-top: 64px;
+		padding-bottom: 28px;
+
+		@include media-breakpoint-up(md) {
+			padding-top: 88px;
+		}
+	}
+
+	.elite-row {
+		row-gap: 32px;
+	}
+
+	p {
+		margin: 0;
+	}
+}

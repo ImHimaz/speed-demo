@@ -1,0 +1,20 @@
+// Label: Stats
+// elite/section → Block Classes. A navy band of counters.
+@use "../../styles/abstracts" as *;
+
+.elite-section--stats {
+	background: var(--wp--preset--color--navy);
+	color: #c9d1e6;
+
+	> .section-inner {
+		padding-block: 48px;
+
+		@include media-breakpoint-up(md) {
+			padding-block: 64px;
+		}
+	}
+
+	.elite-row {
+		row-gap: 32px;
+	}
+}

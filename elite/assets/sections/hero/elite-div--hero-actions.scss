@@ -1,0 +1,15 @@
+// Label: Hero Actions
+// elite/div → Block Classes, under "Hero". The two buttons, centred and
+// wrapping.
+@use "../../styles/abstracts" as *;
+
+.elite-section--hero .elite-div--hero-actions {
+	margin-top: 32px;
+
+	> .div-inner {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		justify-content: center;
+	}
+}

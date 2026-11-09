@@ -1,0 +1,22 @@
+// Label: Quote
+// elite/div → Block Classes, under "Customers". A white testimonial card;
+// the author pinned to its bottom.
+@use "../../styles/abstracts" as *;
+
+.elite-section--customers .elite-div--quote {
+	height: 100%;
+	border-radius: 16px;
+	background: var(--wp--preset--color--base);
+
+	> .div-inner {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		box-sizing: border-box;
+		padding: 28px;
+
+		@include media-breakpoint-up(md) {
+			padding: 32px;
+		}
+	}
+}

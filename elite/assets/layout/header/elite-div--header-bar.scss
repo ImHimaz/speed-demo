@@ -1,0 +1,16 @@
+// Label: Header Bar
+// elite/div → Block Classes, under "Header". Logo, menu and actions in one
+// row, 68px tall (76px from laptops).
+@use "../../styles/abstracts" as *;
+
+.elite-div--header-bar > .div-inner {
+	display: flex;
+	gap: 24px;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 68px;
+
+	@include media-breakpoint-up(lg) {
+		min-height: 76px;
+	}
+}

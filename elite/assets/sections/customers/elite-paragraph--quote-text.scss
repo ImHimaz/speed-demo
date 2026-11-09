@@ -1,0 +1,8 @@
+// Label: Quote Text
+// elite/paragraph → Block Classes, under "Customers". The customer's words.
+@use "../../styles/abstracts" as *;
+
+.elite-section--customers .elite-paragraph--quote-text {
+	margin: 14px 0 24px;
+	color: var(--wp--preset--color--contrast);
+}

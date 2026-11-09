@@ -1,0 +1,73 @@
+// Label: Quotes
+// elite/slider → Block Classes, under "Customers". Arrows as round white
+// buttons at the end of the title's row; dots (the active one long)
+// centred under the cards; equal-height cards.
+@use "../../styles/abstracts" as *;
+
+.elite-section--customers .elite-slider--quotes {
+
+	> .elite-slider__controls {
+		display: contents;
+	}
+
+	.elite-slider__prev,
+	.elite-slider__next {
+		grid-row: 1;
+		grid-column: 1;
+		justify-self: end;
+		width: 48px;
+		height: 48px;
+		margin-bottom: 24px;
+		padding: 14px;
+		border: 1px solid var(--wp--preset--color--line);
+		background: var(--wp--preset--color--base);
+		box-shadow: none;
+		color: var(--wp--preset--color--contrast);
+		transition: border-color $duration-fast $ease;
+
+		&:hover:not(:disabled) {
+			border-color: var(--wp--preset--color--contrast);
+		}
+	}
+
+	.elite-slider__prev {
+		margin-right: 58px;
+	}
+
+	.elite-slider__pagination {
+		grid-row: 3;
+		grid-column: 1;
+		justify-self: center;
+		gap: 8px;
+		margin-top: 28px;
+	}
+
+	.elite-slider__dot {
+		width: 8px;
+		height: 8px;
+		margin: 0;
+		border-radius: 9px;
+		background: #c9cfdb;
+		opacity: 1;
+		transition: width $duration-fast $ease, background-color $duration-fast $ease;
+
+		&.is-active {
+			width: 26px;
+			background: var(--wp--preset--color--primary);
+		}
+	}
+
+	.swiper-slide {
+		height: auto;
+	}
+
+	// From tablets: the arrows level with the title above the slider.
+	@include media-breakpoint-up(md) {
+
+		.elite-slider__prev,
+		.elite-slider__next {
+			margin-top: -84px;
+			margin-bottom: 36px;
+		}
+	}
+}

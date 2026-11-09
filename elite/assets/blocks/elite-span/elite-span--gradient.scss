@@ -1,0 +1,10 @@
+// Label: Gradient
+// Span (text toolbar › Span). Words in the blue-to-mint gradient.
+@use "../../styles/abstracts" as *;
+
+.elite-span--gradient {
+	background: linear-gradient(90deg, var(--wp--preset--color--primary), var(--wp--preset--color--secondary));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}

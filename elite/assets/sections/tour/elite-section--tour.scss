@@ -1,0 +1,11 @@
+// Label: Tour
+// elite/section → Block Classes. The product video on the soft grey.
+@use "../../styles/abstracts" as *;
+
+.elite-section--tour {
+	background: var(--wp--preset--color--surface);
+
+	> .section-inner {
+		padding-block: var(--space-section);
+	}
+}

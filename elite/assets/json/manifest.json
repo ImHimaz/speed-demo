@@ -1,0 +1,579 @@
+{
+	"blocks": {
+		"core/button": {
+			"folder": "core-button",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "core-button--pill",
+					"label": "Pill"
+				},
+				{
+					"value": "core-button--secondary",
+					"label": "Secondary"
+				}
+			],
+			"script": false
+		},
+		"core/list": {
+			"folder": "core-list",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "core-list--checks",
+					"label": "Checks"
+				}
+			],
+			"script": false
+		},
+		"elite/accordion": {
+			"folder": "elite-accordion",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-accordion--bordered",
+					"label": "Bordered"
+				},
+				{
+					"value": "elite-accordion--boxed",
+					"label": "Boxed"
+				},
+				{
+					"value": "elite-accordion--minimal",
+					"label": "Minimal"
+				}
+			],
+			"script": false
+		},
+		"elite/button": {
+			"folder": "elite-button",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-button--link",
+					"label": "Text Link"
+				},
+				{
+					"value": "elite-button--nav",
+					"label": "Nav"
+				},
+				{
+					"value": "elite-button--outline",
+					"label": "Outline"
+				},
+				{
+					"value": "elite-button--primary",
+					"label": "Primary"
+				},
+				{
+					"value": "elite-button--secondary",
+					"label": "Secondary"
+				},
+				{
+					"value": "elite-button--small",
+					"label": "Small"
+				},
+				{
+					"value": "elite-button--social",
+					"label": "Social"
+				}
+			],
+			"script": false
+		},
+		"elite/card": {
+			"folder": "elite-card",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-card--bordered",
+					"label": "Bordered"
+				},
+				{
+					"value": "elite-card--hover-lift",
+					"label": "Hover lift"
+				},
+				{
+					"value": "elite-card--image-zoom",
+					"label": "Image zoom"
+				},
+				{
+					"value": "elite-card--shadow",
+					"label": "Shadow"
+				}
+			],
+			"script": false
+		},
+		"elite/div": {
+			"folder": "elite-div",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-div--padded",
+					"label": "Padded"
+				},
+				{
+					"value": "elite-div--section-head-left",
+					"label": "Section Head (left)"
+				},
+				{
+					"value": "elite-div--section-head",
+					"label": "Section Head"
+				}
+			],
+			"script": false
+		},
+		"elite/heading": {
+			"folder": "elite-heading",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-heading--card-title",
+					"label": "Card Title"
+				}
+			],
+			"script": false
+		},
+		"elite/icon": {
+			"folder": "elite-icon",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-icon--box",
+					"label": "Box"
+				},
+				{
+					"value": "elite-icon--circle",
+					"label": "Circle"
+				}
+			],
+			"script": false
+		},
+		"elite/image": {
+			"folder": "elite-image",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-image--rounded",
+					"label": "Rounded"
+				},
+				{
+					"value": "elite-image--shadow",
+					"label": "Shadow"
+				}
+			],
+			"script": false
+		},
+		"elite/marquee": {
+			"folder": "elite-marquee",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-marquee--grayscale",
+					"label": "Grayscale logos"
+				},
+				{
+					"value": "elite-marquee--hover-lift",
+					"label": "Hover lift"
+				}
+			],
+			"script": false
+		},
+		"elite/paragraph": {
+			"folder": "elite-paragraph",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-paragraph--eyebrow",
+					"label": "Eyebrow"
+				},
+				{
+					"value": "elite-paragraph--section-lead",
+					"label": "Section Lead"
+				}
+			],
+			"script": false
+		},
+		"elite/section": {
+			"folder": "elite-section",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-section--dark",
+					"label": "Dark"
+				},
+				{
+					"value": "elite-section--narrow",
+					"label": "Narrow"
+				},
+				{
+					"value": "elite-section--rounded-corners",
+					"label": "Rounded Corners"
+				},
+				{
+					"value": "elite-section--spacious",
+					"label": "Spacious"
+				}
+			],
+			"script": false
+		},
+		"elite/span": {
+			"folder": "elite-span",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-span--gradient",
+					"label": "Gradient"
+				},
+				{
+					"value": "elite-span--highlight",
+					"label": "Highlight"
+				}
+			],
+			"script": false
+		}
+	},
+	"layout": {
+		"footer": {
+			"modifiers": {
+				"core/list": [
+					{
+						"value": "core-list--footer-links",
+						"label": "Footer › Footer Links"
+					}
+				],
+				"elite/column": [
+					{
+						"value": "elite-column--footer-brand",
+						"label": "Footer › Footer Brand"
+					}
+				],
+				"elite/div": [
+					{
+						"value": "elite-div--footer-bottom",
+						"label": "Footer › Footer Bottom"
+					},
+					{
+						"value": "elite-div--footer-social",
+						"label": "Footer › Footer Social"
+					}
+				],
+				"elite/heading": [
+					{
+						"value": "elite-heading--footer-title",
+						"label": "Footer › Footer Title"
+					}
+				],
+				"elite/paragraph": [
+					{
+						"value": "elite-paragraph--footer-about",
+						"label": "Footer › Footer About"
+					},
+					{
+						"value": "elite-paragraph--footer-legal",
+						"label": "Footer › Footer Legal"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--footer",
+						"label": "Footer › Footer"
+					}
+				]
+			},
+			"script": false
+		},
+		"header": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--header-actions",
+						"label": "Header › Header Actions"
+					},
+					{
+						"value": "elite-div--header-bar",
+						"label": "Header › Header Bar"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--header",
+						"label": "Header › Header"
+					}
+				]
+			},
+			"script": false
+		}
+	},
+	"sections": {
+		"blog": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--blog-head",
+						"label": "Blog › Blog Head"
+					}
+				],
+				"elite/posts": [
+					{
+						"value": "elite-posts--blog",
+						"label": "Blog"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--blog",
+						"label": "Blog › Blog"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-posts--blog"
+		},
+		"cta": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--cta-actions",
+						"label": "Call to Action › Actions"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--cta",
+						"label": "Call to Action"
+					}
+				]
+			},
+			"script": true,
+			"trigger": "elite-section--cta"
+		},
+		"customers": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--quote-author",
+						"label": "Customers › Quote Author"
+					},
+					{
+						"value": "elite-div--quote-person",
+						"label": "Customers › Quote Person"
+					},
+					{
+						"value": "elite-div--quote",
+						"label": "Customers › Quote"
+					}
+				],
+				"elite/image": [
+					{
+						"value": "elite-image--avatar",
+						"label": "Customers › Avatar"
+					}
+				],
+				"elite/paragraph": [
+					{
+						"value": "elite-paragraph--quote-name",
+						"label": "Customers › Quote Name"
+					},
+					{
+						"value": "elite-paragraph--quote-role",
+						"label": "Customers › Quote Role"
+					},
+					{
+						"value": "elite-paragraph--quote-stars",
+						"label": "Customers › Quote Stars"
+					},
+					{
+						"value": "elite-paragraph--quote-text",
+						"label": "Customers › Quote Text"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--customers",
+						"label": "Customers"
+					}
+				],
+				"elite/slider": [
+					{
+						"value": "elite-slider--quotes",
+						"label": "Customers › Quotes"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--customers"
+		},
+		"faq": {
+			"modifiers": {
+				"elite/accordion": [
+					{
+						"value": "elite-accordion--faq",
+						"label": "FAQ"
+					}
+				],
+				"elite/column": [
+					{
+						"value": "elite-column--faq-intro",
+						"label": "FAQ › FAQ Intro"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--faq",
+						"label": "FAQ › FAQ"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-accordion--faq"
+		},
+		"hero": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--hero-actions",
+						"label": "Hero › Hero Actions"
+					},
+					{
+						"value": "elite-div--hero-copy",
+						"label": "Hero › Hero Copy"
+					}
+				],
+				"elite/image": [
+					{
+						"value": "elite-image--hero-shot",
+						"label": "Hero › Hero Shot"
+					}
+				],
+				"elite/paragraph": [
+					{
+						"value": "elite-paragraph--hero-badge",
+						"label": "Hero › Hero Badge"
+					},
+					{
+						"value": "elite-paragraph--hero-note",
+						"label": "Hero › Hero Note"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--hero",
+						"label": "Hero"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--hero"
+		},
+		"solutions": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--tab-media",
+						"label": "Solutions › Tab Media"
+					}
+				],
+				"elite/paragraph": [
+					{
+						"value": "elite-paragraph--tab-label",
+						"label": "Solutions › Tab Label"
+					},
+					{
+						"value": "elite-paragraph--tab-text",
+						"label": "Solutions › Tab Text"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--solutions",
+						"label": "Solutions"
+					}
+				],
+				"elite/tab-slider": [
+					{
+						"value": "elite-tab-slider--pills",
+						"label": "Solutions › Pills"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--solutions"
+		},
+		"stats": {
+			"modifiers": {
+				"elite/column": [
+					{
+						"value": "elite-column--stat",
+						"label": "Stats › Stat"
+					}
+				],
+				"elite/counter": [
+					{
+						"value": "elite-counter--stat",
+						"label": "Stats › Stat"
+					}
+				],
+				"elite/paragraph": [
+					{
+						"value": "elite-paragraph--stat-label",
+						"label": "Stats › Stat Label"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--stats",
+						"label": "Stats"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--stats"
+		},
+		"tour": {
+			"modifiers": {
+				"elite/section": [
+					{
+						"value": "elite-section--tour",
+						"label": "Tour"
+					}
+				],
+				"elite/video": [
+					{
+						"value": "elite-video--tour",
+						"label": "Tour › Tour"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--tour"
+		}
+	},
+	"pages": {
+		"error404": {
+			"modifiers": {},
+			"script": false
+		},
+		"search": {
+			"modifiers": {},
+			"script": false
+		},
+		"single-post": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--post-callout",
+						"label": "Single Post › Callout"
+					}
+				]
+			},
+			"script": false
+		}
+	},
+	"vendor": {
+		"megamenu": {
+			"modifiers": {},
+			"script": false,
+			"when": "MEGAMENU_VERSION"
+		}
+	}
+}

@@ -1,0 +1,10 @@
+parameters:
+	level: 6
+	paths:
+		- functions.php
+		- inc
+	excludePaths:
+		- */build/*
+		- */vendor/*
+	bootstrapFiles:
+		- phpstan-bootstrap.php

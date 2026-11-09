@@ -1,0 +1,35 @@
+// Label: Pills
+// elite/tab-slider → Block Classes, under "Solutions". The tab row as a
+// grey pill bar, centred; the active tab a white pill with a shadow.
+@use "../../styles/abstracts" as *;
+
+.elite-section--solutions .elite-tab-slider--pills {
+	--ts-gap: 32px;
+
+	.elite-tab-slider__nav {
+		justify-self: center;
+		max-width: 100%;
+		padding: 6px;
+		border-radius: 14px;
+		background: var(--wp--preset--color--surface);
+	}
+
+	.elite-tab-slider__tab {
+		width: auto;
+		padding: 12px 18px;
+		border-radius: 10px;
+		color: var(--wp--preset--color--body-text);
+		opacity: 1;
+		transition: background-color $duration-fast $ease, color $duration-fast $ease, box-shadow $duration-fast $ease;
+
+		&::after {
+			display: none;
+		}
+
+		&.is-active {
+			background: var(--wp--preset--color--base);
+			box-shadow: 0 6px 20px -10px rgb(14 21 37 / 0.35);
+			color: var(--wp--preset--color--contrast);
+		}
+	}
+}

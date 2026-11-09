@@ -1,0 +1,8 @@
+// Label: Footer About
+// elite/paragraph → Block Classes, under "Footer". The line under the logo.
+@use "../../styles/abstracts" as *;
+
+.elite-section--footer .elite-paragraph--footer-about {
+	max-width: 320px;
+	margin: 16px 0 22px;
+}
