@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Signalry (demo design)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div data-part="header"></div>
+
+<main>
+	<!-- Page hero -->
+	<section class="page-hero">
+		<div class="container">
+			<span class="eyebrow">Contact</span>
+			<h1>Talk to <em>a real person</em></h1>
+			<p class="lead">Questions about plans, security or a demo? Send us a note and someone from our team will reply within one working day.</p>
+		</div>
+	</section>
+
+	<!-- Form + details -->
+	<section class="section" style="padding-top:0">
+		<div class="container contact__grid">
+			<div class="form-card">
+				<h3>Send us a message</h3>
+				<p>All fields marked * are required.</p>
+				<form class="form">
+					<div class="form__row">
+						<div class="field"><label for="c-name">Full name *</label><input id="c-name" name="name" autocomplete="name" required></div>
+						<div class="field"><label for="c-email">Work email *</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+					</div>
+					<div class="form__row">
+						<div class="field"><label for="c-company">Company</label><input id="c-company" name="company" autocomplete="organization"></div>
+						<div class="field"><label for="c-topic">What’s it about? *</label><select id="c-topic" name="topic" required><option>A demo</option><option>Pricing and plans</option><option>Security and compliance</option><option>Support for my account</option><option>Something else</option></select></div>
+					</div>
+					<div class="field"><label for="c-message">Message *</label><textarea id="c-message" name="message" required></textarea></div>
+					<label class="form__consent"><input type="checkbox" required> I agree to Signalry contacting me about this request. See our privacy policy.</label>
+					<button class="btn btn--primary btn--block" type="submit">Send message</button>
+				</form>
+			</div>
+			<div>
+				<ul class="contact__list">
+					<li class="contact__item"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></i><div><strong>Email</strong><span>hello@signalry.example</span></div></li>
+					<li class="contact__item"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></i><div><strong>Sales</strong><span>+1 (415) 555-0142 · Mon–Fri, 9am–6pm PT</span></div></li>
+					<li class="contact__item"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></i><div><strong>Office</strong><span>120 Market Street, Suite 400, San Francisco, CA 94105</span></div></li>
+				</ul>
+				<div class="contact__map"><img src="images/map.svg" width="960" height="540" alt="Map showing our office on Market Street, San Francisco" loading="lazy"></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ (accordion, reused) -->
+	<section class="section faq section--soft">
+		<div class="container faq__grid">
+			<div class="faq__intro">
+				<span class="eyebrow">Before you write</span>
+				<h2 class="h2">Quick answers</h2>
+				<p class="lead">These come up most. If yours isn’t here, the form is the fastest way to reach us.</p>
+			</div>
+			<div class="accordion">
+				<details open><summary>How fast will you reply?<i aria-hidden="true"></i></summary><div class="answer"><p>Within one working day, usually within a few hours during US office hours.</p></div></details>
+				<details><summary>I already have an account. Where do I get help?<i aria-hidden="true"></i></summary><div class="answer"><p>Use the chat in the Signalry app or email support@signalry.example. Growth and Enterprise plans have priority support.</p></div></details>
+				<details><summary>Can I get your security documents?<i aria-hidden="true"></i></summary><div class="answer"><p>Yes. Choose “Security and compliance” above and we’ll send our SOC 2 report and DPA.</p></div></details>
+			</div>
+		</div>
+	</section>
+</main>
+
+<div data-part="footer"></div>
+
+<script src="site.js"></script>
+</body>
+</html>

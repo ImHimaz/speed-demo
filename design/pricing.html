@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing · Signalry (demo design)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div data-part="header"></div>
+
+<main>
+	<!-- Page hero -->
+	<section class="page-hero">
+		<div class="container">
+			<span class="eyebrow">Pricing</span>
+			<h1>Simple pricing that grows <em>with your feedback</em></h1>
+			<p class="lead">Pay for the feedback you analyse, never for seats. Every plan starts with a 14-day free trial, no card needed.</p>
+		</div>
+	</section>
+
+	<!-- Plans: the same Monthly/Yearly tab slider as the home page -->
+	<section class="section pricing" data-tabs="fade" style="padding-top:0">
+		<div class="container">
+			<div role="tablist" class="tabs__list" aria-label="Billing">
+				<button role="tab" class="tabs__tab" aria-selected="true">Monthly</button>
+				<button role="tab" class="tabs__tab" aria-selected="false">Yearly <small>−20%</small></button>
+			</div>
+			<div class="tabs__viewport">
+				<div class="tabs__track">
+					<div role="tabpanel" class="tabs__panel">
+						<div class="plan">
+							<h3>Starter</h3><p class="plan__for">For small teams getting started</p>
+							<p class="plan__price"><strong>$59</strong><span>/ month</span></p><p class="plan__note">Up to 2,000 pieces of feedback a month</p>
+							<a class="btn btn--secondary" href="#">Start free trial</a>
+							<ul class="checks"><li>3 sources</li><li>AI themes and sentiment</li><li>Weekly summaries</li><li>Email support</li></ul>
+						</div>
+						<div class="plan plan--featured">
+							<span class="plan__tag">Most popular</span>
+							<h3>Growth</h3><p class="plan__for">For teams that run on feedback</p>
+							<p class="plan__price"><strong>$179</strong><span>/ month</span></p><p class="plan__note">Up to 10,000 pieces of feedback a month</p>
+							<a class="btn btn--primary" href="#">Start free trial</a>
+							<ul class="checks"><li>Unlimited sources</li><li>Roadmaps with revenue</li><li>Spike alerts in Slack</li><li>Priority support</li></ul>
+						</div>
+						<div class="plan">
+							<h3>Enterprise</h3><p class="plan__for">For larger companies</p>
+							<p class="plan__price"><strong>Custom</strong></p><p class="plan__note">Any volume, billed yearly</p>
+							<a class="btn btn--secondary" href="contact.html">Talk to sales</a>
+							<ul class="checks"><li>SSO and audit logs</li><li>Data region of your choice</li><li>Custom AI models</li><li>Dedicated success manager</li></ul>
+						</div>
+					</div>
+					<div role="tabpanel" class="tabs__panel">
+						<div class="plan">
+							<h3>Starter</h3><p class="plan__for">For small teams getting started</p>
+							<p class="plan__price"><strong>$47</strong><span>/ month</span></p><p class="plan__note">$564 billed yearly</p>
+							<a class="btn btn--secondary" href="#">Start free trial</a>
+							<ul class="checks"><li>3 sources</li><li>AI themes and sentiment</li><li>Weekly summaries</li><li>Email support</li></ul>
+						</div>
+						<div class="plan plan--featured">
+							<span class="plan__tag">Most popular</span>
+							<h3>Growth</h3><p class="plan__for">For teams that run on feedback</p>
+							<p class="plan__price"><strong>$143</strong><span>/ month</span></p><p class="plan__note">$1,716 billed yearly</p>
+							<a class="btn btn--primary" href="#">Start free trial</a>
+							<ul class="checks"><li>Unlimited sources</li><li>Roadmaps with revenue</li><li>Spike alerts in Slack</li><li>Priority support</li></ul>
+						</div>
+						<div class="plan">
+							<h3>Enterprise</h3><p class="plan__for">For larger companies</p>
+							<p class="plan__price"><strong>Custom</strong></p><p class="plan__note">Any volume, billed yearly</p>
+							<a class="btn btn--secondary" href="contact.html">Talk to sales</a>
+							<ul class="checks"><li>SSO and audit logs</li><li>Data region of your choice</li><li>Custom AI models</li><li>Dedicated success manager</li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p class="pricing__foot">Prices in USD, excluding tax. Need more feedback each month? Every plan scales in steps of 1,000.</p>
+		</div>
+	</section>
+
+	<!-- Logo marquee (reused) -->
+	<section class="logos" aria-label="Customers" style="border-top:1px solid var(--line)">
+		<div class="container">
+			<p class="logos__title">Trusted by 2,400+ product, support and marketing teams</p>
+			<div class="marquee">
+				<div class="marquee__track">
+					<img src="images/logos/northwind.svg" width="168" height="36" alt="Northwind">
+					<img src="images/logos/brightside.svg" width="172" height="36" alt="Brightside">
+					<img src="images/logos/fieldnote.svg" width="152" height="36" alt="Fieldnote">
+					<img src="images/logos/orbitly.svg" width="128" height="36" alt="Orbitly">
+					<img src="images/logos/lumen.svg" width="124" height="36" alt="Lumen">
+					<img src="images/logos/kitepay.svg" width="134" height="36" alt="Kitepay">
+					<img src="images/logos/harbor.svg" width="138" height="36" alt="Harbor">
+					<img src="images/logos/quanta.svg" width="132" height="36" alt="Quanta">
+					<img src="images/logos/northwind.svg" width="168" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/brightside.svg" width="172" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/fieldnote.svg" width="152" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/orbitly.svg" width="128" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/lumen.svg" width="124" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/kitepay.svg" width="134" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/harbor.svg" width="138" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/quanta.svg" width="132" height="36" alt="" aria-hidden="true">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Compare features (a core Table in Elite, a Table/HTML widget in Elementor) -->
+	<section class="section">
+		<div class="container">
+			<div class="head center">
+				<span class="eyebrow">Compare plans</span>
+				<h2 class="h2">Every feature, side by side</h2>
+			</div>
+			<div class="compare">
+				<table>
+					<thead><tr><th scope="col">Feature</th><th scope="col">Starter</th><th scope="col">Growth</th><th scope="col">Enterprise</th></tr></thead>
+					<tbody>
+						<tr class="group"><th colspan="4">Collect</th></tr>
+						<tr><th scope="row">Feedback each month</th><td>2,000</td><td>10,000</td><td>Unlimited</td></tr>
+						<tr><th scope="row">Sources</th><td>3</td><td>Unlimited</td><td>Unlimited</td></tr>
+						<tr><th scope="row">CSV upload and email forwarding</th><td><span class="yes" aria-label="Included"></span></td><td><span class="yes" aria-label="Included"></span></td><td><span class="yes" aria-label="Included"></span></td></tr>
+						<tr class="group"><th colspan="4">Understand</th></tr>
+						<tr><th scope="row">AI themes and sentiment</th><td><span class="yes" aria-label="Included"></span></td><td><span class="yes" aria-label="Included"></span></td><td><span class="yes" aria-label="Included"></span></td></tr>
+						<tr><th scope="row">Weekly AI summaries</th><td><span class="yes" aria-label="Included"></span></td><td><span class="yes" aria-label="Included"></span></td><td><span class="yes" aria-label="Included"></span></td></tr>
+						<tr><th scope="row">Spike alerts (Slack, email)</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included"></span></td><td><span class="yes" aria-label="Included"></span></td></tr>
+						<tr><th scope="row">Custom AI models</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included"></span></td></tr>
+						<tr class="group"><th colspan="4">Act</th></tr>
+						<tr><th scope="row">Roadmaps with revenue</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included"></span></td><td><span class="yes" aria-label="Included"></span></td></tr>
+						<tr><th scope="row">Help desk and CRM sync</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included"></span></td><td><span class="yes" aria-label="Included"></span></td></tr>
+						<tr class="group"><th colspan="4">Security and support</th></tr>
+						<tr><th scope="row">SSO and audit logs</th><td><span class="no" aria-label="Not included">—</span></td><td><span class="no" aria-label="Not included">—</span></td><td><span class="yes" aria-label="Included"></span></td></tr>
+						<tr><th scope="row">Data region</th><td>US</td><td>US or EU</td><td>Your choice</td></tr>
+						<tr><th scope="row">Support</th><td>Email</td><td>Priority</td><td>Dedicated manager</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<!-- Pricing FAQ (accordion) -->
+	<section class="section faq section--soft">
+		<div class="container faq__grid">
+			<div class="faq__intro">
+				<span class="eyebrow">Pricing FAQ</span>
+				<h2 class="h2">Questions about billing</h2>
+				<p class="lead">Still unsure which plan fits? Tell us how much feedback you get and we’ll suggest one.</p>
+				<a class="btn btn--secondary" href="contact.html">Ask our team</a>
+			</div>
+			<div class="accordion">
+				<details open><summary>What counts as a piece of feedback?<i aria-hidden="true"></i></summary><div class="answer"><p>One ticket, survey answer, review, chat or call transcript. Replies in the same ticket count once.</p></div></details>
+				<details><summary>What happens if we go over our limit?<i aria-hidden="true"></i></summary><div class="answer"><p>Nothing breaks. We keep collecting and let you know, and you can move up a step or wait for next month.</p></div></details>
+				<details><summary>Can we change plans later?<i aria-hidden="true"></i></summary><div class="answer"><p>Yes, at any time. Upgrades apply straight away; downgrades apply at the end of your billing period.</p></div></details>
+				<details><summary>Do you offer discounts for nonprofits and startups?<i aria-hidden="true"></i></summary><div class="answer"><p>Yes: 50% off for registered nonprofits, and our startup programme gives a year of Growth at Starter prices.</p></div></details>
+				<details><summary>Which payment methods do you accept?<i aria-hidden="true"></i></summary><div class="answer"><p>All major cards. Yearly plans can also pay by bank transfer against an invoice.</p></div></details>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA band (no form here: just buttons) -->
+	<section class="cta">
+		<div class="container center">
+			<h2 class="h2">Start listening in ten minutes</h2>
+			<p class="lead" style="max-width:600px;margin-left:auto;margin-right:auto">Connect a source, see your first themes today and your first summary on Monday.</p>
+			<div class="hero__actions"><a class="btn btn--white" href="#">Start free trial</a><a class="btn btn--secondary" href="contact.html">Talk to sales</a></div>
+		</div>
+	</section>
+</main>
+
+<div data-part="footer"></div>
+
+<script src="site.js"></script>
+</body>
+</html>

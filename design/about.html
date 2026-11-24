@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Signalry (demo design)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div data-part="header"></div>
+
+<main>
+	<!-- Page hero -->
+	<section class="page-hero">
+		<div class="container">
+			<span class="eyebrow">About us</span>
+			<h1>We help companies <em>actually listen</em> to their customers</h1>
+			<p class="lead">Signalry started with a simple question: why does it take a churned customer for a team to hear a problem everyone already mentioned?</p>
+		</div>
+	</section>
+
+	<!-- Story: text + image -->
+	<section class="section" style="padding-top:0">
+		<div class="container split">
+			<div>
+				<span class="eyebrow">Our story</span>
+				<h2 class="h2">Feedback was everywhere. Answers weren’t.</h2>
+				<p class="lead" style="margin-top:20px">In 2021 our founders ran product and support at a fast-growing SaaS company. They had thousands of tickets, three survey tools and a spreadsheet nobody trusted.</p>
+				<p>So they built a tool that read everything, grouped it into themes and sent a short summary every Monday. Within a quarter, churn fell by a third. Other teams asked to use it, and Signalry was born.</p>
+				<p>Today more than 2,400 teams use Signalry to decide what to fix, what to build and who to thank.</p>
+			</div>
+			<div class="split__media"><img src="images/insights.webp" width="1200" height="795" alt="Signalry’s insights view: themes ranked by how often they come up" loading="lazy"></div>
+		</div>
+	</section>
+
+	<!-- Counters (reused) -->
+	<section class="stats" aria-label="Signalry in numbers">
+		<div class="container stats__grid">
+			<div class="stat"><div class="stat__value"><b>2021</b></div><div class="stat__label">Founded, in San Francisco</div></div>
+			<div class="stat"><div class="stat__value"><b data-count="64">0</b></div><div class="stat__label">People across 11 countries</div></div>
+			<div class="stat"><div class="stat__value"><b data-count="2400">0</b><span>+</span></div><div class="stat__label">Teams listening with Signalry</div></div>
+			<div class="stat"><div class="stat__value"><b data-count="18">0</b><span>M+</span></div><div class="stat__label">Pieces of feedback analysed</div></div>
+		</div>
+	</section>
+
+	<!-- Values (3 cards) -->
+	<section class="section section--soft">
+		<div class="container">
+			<div class="head center">
+				<span class="eyebrow">What we believe</span>
+				<h2 class="h2">Three ideas behind everything we build</h2>
+			</div>
+			<div class="values">
+				<article class="value"><b>01</b><h3>Every customer deserves to be heard</h3><p>Not just the loudest ones. Signalry gives a quiet app review the same weight as an angry escalation.</p></article>
+				<article class="value"><b>02</b><h3>Show the numbers, not the noise</h3><p>Every theme comes with how many customers mentioned it and what they’re worth, so decisions are easy to defend.</p></article>
+				<article class="value"><b>03</b><h3>Your data stays yours</h3><p>We never train shared models on customer data, and you choose where it lives. Trust is the product.</p></article>
+			</div>
+		</div>
+	</section>
+
+	<!-- Team grid -->
+	<section class="section">
+		<div class="container">
+			<div class="head center">
+				<span class="eyebrow">Leadership</span>
+				<h2 class="h2">The team behind Signalry</h2>
+			</div>
+			<div class="team">
+				<div class="member"><img src="images/avatar-ma.webp" width="96" height="96" alt="" loading="lazy"><h3>Maya Alvarez</h3><p>Co-founder & CEO</p></div>
+				<div class="member"><img src="images/avatar-dl.webp" width="96" height="96" alt="" loading="lazy"><h3>Daniel Lee</h3><p>Co-founder & CTO</p></div>
+				<div class="member"><img src="images/avatar-sr.webp" width="96" height="96" alt="" loading="lazy"><h3>Sara Rahman</h3><p>VP Customer Success</p></div>
+				<div class="member"><img src="images/avatar-jk.webp" width="96" height="96" alt="" loading="lazy"><h3>James Kim</h3><p>Head of AI</p></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA with the demo form (reused) -->
+	<section class="cta">
+		<div class="container cta__grid">
+			<div>
+				<span class="eyebrow" style="color:var(--mint)">Join us</span>
+				<h2 class="h2">Want to hear what your customers say?</h2>
+				<p class="lead">Book a 30-minute demo with the team that built Signalry.</p>
+			</div>
+			<div class="form-card">
+				<h3>Book your demo</h3>
+				<p>We reply within one working day.</p>
+				<form class="form">
+					<div class="form__row">
+						<div class="field"><label for="a-name">Full name</label><input id="a-name" name="name" autocomplete="name" required></div>
+						<div class="field"><label for="a-email">Work email</label><input id="a-email" name="email" type="email" autocomplete="email" required></div>
+					</div>
+					<div class="form__row">
+						<div class="field"><label for="a-company">Company</label><input id="a-company" name="company" autocomplete="organization"></div>
+						<div class="field"><label for="a-size">Team size</label><select id="a-size" name="size"><option>1–10</option><option>11–50</option><option>51–200</option><option>201+</option></select></div>
+					</div>
+					<label class="form__consent"><input type="checkbox" required> I agree to Signalry contacting me about this request. See our privacy policy.</label>
+					<button class="btn btn--primary btn--block" type="submit">Book my demo</button>
+				</form>
+			</div>
+		</div>
+	</section>
+</main>
+
+<div data-part="footer"></div>
+
+<script src="site.js"></script>
+</body>
+</html>

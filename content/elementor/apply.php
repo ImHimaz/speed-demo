@@ -3,8 +3,11 @@
  * Saves the Elementor build (gen.mjs → build/*.json) into the Elementor site
  * the way the editor does: the Manrope custom font (same file as the Elite
  * build), the Kit's site settings, Theme Builder header and footer (shown
- * everywhere), the blog card loop item, and the home page (Elementor Full
- * Width template). Then clears Elementor's CSS so it regenerates.
+ * everywhere), single post (all posts) and archive (blog page and archives)
+ * templates, the blog card loop item, and the Home, About, Pricing and
+ * Contact pages (Elementor Full Width template). Round 2 runs on Elementor's
+ * and Hello's default settings, plus font-display: swap. Then clears
+ * Elementor's CSS so it regenerates.
  *
  * Run: wp eval-file /var/www/html/demo-content/elementor/apply.php
  *
@@ -33,6 +36,10 @@ function signalry_fill( $data, array $tpl ) {
 			$data[ $k ] = signalry_fill( $v, $tpl );
 		}
 		return $data;
+	}
+	if ( is_string( $data ) && str_contains( $data, '@cf7:' ) ) {
+		$forms = (array) get_option( 'signalry_forms', array() );
+		return preg_replace_callback( '/@cf7:(\w+)/', static fn ( array $m ): string => (string) ( $forms[ $m[1] ] ?? 0 ), $data );
 	}
 	if ( is_string( $data ) && preg_match( '/^@(id|url|tpl):(.+)$/', $data, $m ) ) {
 		if ( 'tpl' === $m[1] ) {
@@ -151,27 +158,51 @@ delete_option( 'elementor_fonts_manager_font_types' );
 // 2. Kit (Site Settings).
 Plugin::$instance->kits_manager->get_active_kit()->save( array( 'settings' => array_merge( (array) Plugin::$instance->kits_manager->get_active_kit()->get_settings(), signalry_json( 'kit' ) ) ) );
 
-// 3. Theme Builder: loop item, header, footer.
+// 3. Theme Builder: loop item, header, footer, single post, archive.
 $signalry_tpl = array(
-	'loop'   => signalry_template( 'Blog card', 'loop-item' ),
-	'header' => signalry_template( 'Header', 'header' ),
-	'footer' => signalry_template( 'Footer', 'footer' ),
+	'loop'    => signalry_template( 'Blog card', 'loop-item' ),
+	'header'  => signalry_template( 'Header', 'header' ),
+	'footer'  => signalry_template( 'Footer', 'footer' ),
+	'single'  => signalry_template( 'Single post', 'single-post' ),
+	'archive' => signalry_template( 'Blog and archives', 'archive' ),
 );
 signalry_save( $signalry_tpl['loop'], signalry_fill( signalry_json( 'loop-item' ), $signalry_tpl ), 'loop-item' );
 update_post_meta( $signalry_tpl['loop'], '_elementor_source', 'post' );
-foreach ( array( 'header', 'footer' ) as $part ) {
-	signalry_save( $signalry_tpl[ $part ], signalry_fill( signalry_json( $part ), $signalry_tpl ), $part );
-	update_post_meta( $signalry_tpl[ $part ], '_elementor_conditions', array( 'include/general' ) );
+$signalry_conditions = array(
+	'header'  => array( 'include/general' ),
+	'footer'  => array( 'include/general' ),
+	'single'  => array( 'include/singular/post' ),
+	'archive' => array( 'include/archive' ),
+);
+foreach ( $signalry_conditions as $part => $conditions ) {
+	$type = 'single' === $part ? 'single-post' : $part;
+	signalry_save( $signalry_tpl[ $part ], signalry_fill( signalry_json( $part ), $signalry_tpl ), $type );
+	update_post_meta( $signalry_tpl[ $part ], '_elementor_conditions', $conditions );
 }
 \ElementorPro\Modules\ThemeBuilder\Module::instance()->get_conditions_manager()->get_cache()->regenerate();
 
-// 4. Home page: Elementor Full Width (the theme builder header and footer
+// 4. Pages: Elementor Full Width (the theme builder header and footer
 // around Elementor content, no page title).
-$signalry_home = (int) get_option( 'page_on_front' );
-update_post_meta( $signalry_home, '_wp_page_template', 'elementor_header_footer' );
-signalry_save( $signalry_home, signalry_fill( signalry_json( 'home' ), $signalry_tpl ), 'wp-page' );
+$signalry_pages = (array) get_option( 'signalry_pages', array() );
+$signalry_saved = array();
+foreach ( array( 'home' => (int) get_option( 'page_on_front' ), 'about' => (int) ( $signalry_pages['about'] ?? 0 ), 'pricing' => (int) ( $signalry_pages['pricing'] ?? 0 ), 'contact' => (int) ( $signalry_pages['contact'] ?? 0 ) ) as $name => $page_id ) {
+	if ( ! $page_id ) {
+		WP_CLI::warning( "No page for $name: run content/setup.php first." );
+		continue;
+	}
+	update_post_meta( $page_id, '_wp_page_template', 'elementor_header_footer' );
+	signalry_save( $page_id, signalry_fill( signalry_json( $name ), $signalry_tpl ), 'wp-page' );
+	$signalry_saved[] = "$name $page_id";
+}
+
+// Round 2: Elementor's and Hello's defaults (round 1 printed the CSS in
+// the page and turned Hello's CSS off), plus font-display: swap.
+delete_option( 'elementor_css_print_method' );
+delete_option( 'hello_elementor_settings_header_footer' );
+delete_option( 'hello_elementor_settings_hello_theme' );
+update_option( 'elementor_font_display', 'swap' );
 
 // 5. Regenerate CSS (Elementor writes post CSS files on the next view).
 Plugin::$instance->files_manager->clear_cache();
 
-WP_CLI::success( sprintf( 'Saved: home %d, header %d, footer %d, loop item %d, font %d', $signalry_home, $signalry_tpl['header'], $signalry_tpl['footer'], $signalry_tpl['loop'], $signalry_font_id ) );
+WP_CLI::success( sprintf( 'Saved pages: %s; templates %s; font %d', implode( ', ', $signalry_saved ), wp_json_encode( $signalry_tpl ), $signalry_font_id ) );

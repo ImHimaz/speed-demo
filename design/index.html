@@ -7,276 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap" rel="stylesheet">
-<style>
-/* Signalry demo design. Mobile first; one variable font (Manrope). */
-:root {
-	--ink: #0e1525; --ink-2: #3b4558; --muted: #6b7487; --line: #e6e9f0;
-	--soft: #f5f7fb; --white: #fff; --navy: #0b1430; --navy-2: #131e45;
-	--brand: #3d5afe; --brand-dark: #2238c9; --brand-soft: #e9edff;
-	--mint: #16c79a; --coral: #ff7a59; --amber: #f5b83d;
-	--radius: 16px; --radius-sm: 10px;
-	--gutter: 20px; --container: 1200px;
-	--section: 72px;
-	--shadow: 0 30px 60px -30px rgb(14 21 37 / .35);
-}
-@media (min-width: 768px) { :root { --gutter: 32px; --section: 96px; } }
-@media (min-width: 1200px) { :root { --section: 120px; } }
-
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: Manrope, system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.6; color: var(--ink-2); background: var(--white); -webkit-font-smoothing: antialiased; }
-img, video { display: block; max-width: 100%; height: auto; }
-a { color: inherit; }
-h1, h2, h3, h4 { margin: 0; color: var(--ink); line-height: 1.12; letter-spacing: -.025em; font-weight: 750; }
-p { margin: 0; }
-.container { width: 100%; max-width: calc(var(--container) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
-.section { padding: var(--section) 0; }
-.eyebrow { display: inline-block; margin-bottom: 14px; color: var(--brand); font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.h2 { font-size: clamp(30px, 4.2vw, 48px); }
-.lead { font-size: clamp(17px, 1.5vw, 20px); color: var(--ink-2); }
-.center { text-align: center; }
-.head { max-width: 680px; margin: 0 auto 40px; }
-.head .lead { margin-top: 16px; }
-@media (min-width: 768px) { .head { margin-bottom: 56px; } }
-
-/* Buttons */
-.btn { display: inline-flex; gap: 8px; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border: 2px solid transparent; border-radius: var(--radius-sm); font-family: inherit; font-size: 15px; font-weight: 700; line-height: 1.2; text-decoration: none; cursor: pointer; transition: background-color .2s, border-color .2s, color .2s, transform .2s; }
-.btn:hover { transform: translateY(-1px); }
-.btn--primary { background: var(--brand); color: #fff; }
-.btn--primary:hover { background: var(--brand-dark); }
-.btn--secondary { border-color: var(--line); background: #fff; color: var(--ink); }
-.btn--secondary:hover { border-color: var(--ink); }
-.btn--small { min-height: 42px; padding: 0 18px; font-size: 14px; }
-@media (min-width: 768px) { .btn { min-height: 52px; padding: 0 26px; font-size: 16px; } .btn--small { min-height: 44px; padding: 0 20px; font-size: 15px; } }
-.link { display: inline-flex; gap: 6px; align-items: center; color: var(--brand); font-weight: 700; text-decoration: none; }
-.link:hover { text-decoration: underline; }
-
-/* Header */
-.header { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid transparent; background: rgb(255 255 255 / .9); backdrop-filter: blur(12px); transition: border-color .2s; }
-.header.is-scrolled { border-color: var(--line); }
-.header__inner { display: flex; gap: 24px; align-items: center; min-height: 68px; }
-.logo { display: inline-flex; gap: 10px; align-items: center; color: var(--ink); font-size: 20px; font-weight: 800; letter-spacing: -.02em; text-decoration: none; }
-.logo__mark { position: relative; width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--brand), var(--mint)); }
-.logo__mark::after { content: ""; position: absolute; inset: 9px; border-radius: 50%; background: #fff; }
-.nav { display: none; }
-.header__actions { display: flex; gap: 8px; align-items: center; margin-left: auto; }
-.header__signin { display: none; padding: 8px 12px; color: var(--ink); font-weight: 700; font-size: 15px; text-decoration: none; }
-.header .btn--small { display: none; }
-.burger { display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px; border: 0; background: none; color: var(--ink); cursor: pointer; }
-@media (min-width: 768px) { .header .btn--small { display: inline-flex; } .header__signin { display: inline-block; } }
-@media (min-width: 1024px) {
-	.header__inner { min-height: 76px; }
-	.burger { display: none; }
-	.nav { display: flex; gap: 4px; margin-left: 24px; }
-	.nav > ul { display: flex; gap: 4px; margin: 0; padding: 0; list-style: none; }
-	.nav__item { position: relative; }
-	.nav__link { display: inline-flex; gap: 6px; align-items: center; padding: 10px 12px; border: 0; border-radius: 8px; background: none; color: var(--ink); font-family: inherit; font-size: 15px; font-weight: 650; line-height: 1.2; text-decoration: none; cursor: pointer; }
-	.nav__link:hover, .nav__item:focus-within > .nav__link { background: var(--soft); }
-	.nav__link svg { transition: transform .2s; }
-	.nav__item:hover > .nav__link svg, .nav__item:focus-within > .nav__link svg { transform: rotate(180deg); }
-	.dropdown { position: absolute; top: 100%; left: -12px; width: 340px; padding: 10px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .2s, transform .2s, visibility .2s; }
-	.nav__item:hover > .dropdown, .nav__item:focus-within > .dropdown { opacity: 1; visibility: visible; transform: none; }
-	.dropdown a { display: flex; gap: 14px; padding: 12px; border-radius: 10px; text-decoration: none; }
-	.dropdown a:hover { background: var(--soft); }
-	.dropdown i { flex: none; width: 36px; height: 36px; border-radius: 10px; }
-	.dropdown strong { display: block; color: var(--ink); font-size: 15px; }
-	.dropdown span { display: block; color: var(--muted); font-size: 13px; line-height: 1.4; }
-}
-/* Mobile menu */
-.menu { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; padding: 0 var(--gutter) 32px; overflow-y: auto; background: #fff; transform: translateX(100%); visibility: hidden; transition: transform .3s, visibility .3s; }
-.menu.is-open { transform: none; visibility: visible; }
-.menu__top { display: flex; justify-content: space-between; align-items: center; min-height: 68px; }
-.menu ul { margin: 8px 0 0; padding: 0; list-style: none; }
-.menu li { border-bottom: 1px solid var(--line); }
-.menu .menu__link { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 18px 0; border: 0; background: none; color: var(--ink); font-family: inherit; font-size: 18px; font-weight: 700; line-height: 1.2; text-align: left; text-decoration: none; cursor: pointer; }
-.menu__sub { display: none; padding: 0 0 12px 0 !important; margin: 0 !important; }
-.menu__sub li { border: 0; }
-.menu__sub a { display: block; padding: 10px 0; color: var(--ink-2); font-weight: 600; text-decoration: none; }
-.menu li.is-open .menu__sub { display: block; }
-.menu li.is-open .menu__link svg { transform: rotate(180deg); }
-.menu__actions { display: grid; gap: 12px; margin-top: auto; padding-top: 32px; }
-@media (min-width: 1024px) { .menu { display: none; } }
-
-/* Hero (image) */
-.hero { position: relative; overflow: hidden; padding: 56px 0 0; background: radial-gradient(ellipse 60% 50% at 85% 10%, #e3e8ff, transparent 70%), radial-gradient(ellipse 50% 40% at 0% 30%, #dcf6ee, transparent 70%), var(--white); }
-.hero__copy { max-width: 820px; margin: 0 auto; text-align: center; }
-.badge { display: inline-flex; gap: 8px; align-items: center; margin-bottom: 22px; padding: 6px 14px 6px 6px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink-2); font-size: 14px; font-weight: 650; }
-.badge b { padding: 3px 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand-dark); font-size: 12px; }
-.hero h1 { font-size: clamp(40px, 6.2vw, 76px); line-height: 1.04; letter-spacing: -.035em; text-wrap: balance; }
-.hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--brand), var(--mint)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.hero .lead { max-width: 620px; margin: 22px auto 0; }
-.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 32px; }
-.hero__note { margin-top: 16px; color: var(--muted); font-size: 14px; }
-.hero__image { position: relative; max-width: 1100px; margin: 48px auto 0; }
-.hero__image img { width: 100%; border-radius: 14px 14px 0 0; box-shadow: 0 -10px 80px -20px rgb(61 90 254 / .35); }
-@media (min-width: 768px) { .hero { padding-top: 88px; } .hero__image { margin-top: 64px; } .hero__image img { border-radius: 18px 18px 0 0; } }
-
-/* Counters */
-.stats { padding: 48px 0; background: var(--navy); color: #c9d1e6; }
-.stats__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
-.stat__value { color: #fff; font-size: clamp(36px, 4.6vw, 56px); font-weight: 800; line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
-.stat__value span { color: var(--mint); }
-.stat__label { margin-top: 10px; font-size: 15px; }
-@media (min-width: 768px) { .stats { padding: 64px 0; } .stats__grid { grid-template-columns: repeat(4, 1fr); } .stat { padding-left: 24px; border-left: 1px solid rgb(255 255 255 / .12); } }
-
-/* Video */
-.video { background: var(--soft); }
-.video__frame { position: relative; max-width: 960px; margin: 0 auto; overflow: hidden; border-radius: var(--radius); background: var(--navy); box-shadow: var(--shadow); aspect-ratio: 16 / 9; }
-.video__frame video, .video__frame img { width: 100%; height: 100%; object-fit: cover; }
-.video__play { position: absolute; inset: 0; display: grid; place-items: center; border: 0; background: rgb(11 20 48 / .15); cursor: pointer; }
-.video__play span { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; background: #fff; box-shadow: 0 10px 40px rgb(0 0 0 / .3); transition: transform .2s; }
-.video__play:hover span { transform: scale(1.08); }
-@media (min-width: 768px) { .video__play span { width: 92px; height: 92px; } }
-
-/* Tab slider */
-.tabs__list { display: flex; gap: 6px; margin: 0 auto 32px; padding: 6px; width: max-content; max-width: 100%; overflow-x: auto; border-radius: 14px; background: var(--soft); scrollbar-width: none; }
-.tabs__tab { flex: none; padding: 12px 18px; border: 0; border-radius: 10px; background: none; color: var(--ink-2); font-family: inherit; font-size: 15px; font-weight: 700; line-height: 1.2; cursor: pointer; transition: background-color .2s, color .2s, box-shadow .2s; }
-.tabs__tab[aria-selected="true"] { background: #fff; color: var(--ink); box-shadow: 0 6px 20px -10px rgb(14 21 37 / .35); }
-.tabs__viewport { overflow: hidden; }
-.tabs__track { display: flex; transition: transform .5s cubic-bezier(.65, 0, .35, 1); }
-.tabs__panel { flex: 0 0 100%; display: grid; gap: 32px; align-items: center; }
-.tabs__panel h3 { font-size: clamp(24px, 2.6vw, 32px); }
-.tabs__panel p { margin-top: 14px; }
-.checks { margin: 22px 0 26px; padding: 0; list-style: none; }
-.checks li { position: relative; margin: 10px 0; padding-left: 32px; color: var(--ink); font-weight: 600; }
-.checks li::before { content: ""; position: absolute; top: 3px; left: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--mint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 20px no-repeat; }
-.tabs__media { padding: 20px; border-radius: var(--radius); background: linear-gradient(135deg, var(--brand-soft), #e2f8f1); }
-.tabs__media img { width: 100%; border-radius: 12px; box-shadow: var(--shadow); }
-@media (min-width: 992px) { .tabs__panel { grid-template-columns: 5fr 7fr; gap: 64px; } .tabs__media { padding: 36px; } }
-
-/* Testimonials slider */
-.testimonials { overflow: hidden; background: var(--soft); }
-.slider__top { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; }
-.slider__arrows { display: flex; gap: 10px; }
-.slider__arrow { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 50%; background: #fff; color: var(--ink); cursor: pointer; transition: border-color .2s; }
-.slider__arrow:hover { border-color: var(--ink); }
-.slider__arrow:disabled { opacity: .4; cursor: default; }
-.slider__track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; margin: 0 calc(-1 * var(--gutter)); padding: 4px var(--gutter) 8px; scroll-padding: 0 var(--gutter); }
-.slider__track::-webkit-scrollbar { display: none; }
-.quote { flex: 0 0 86%; margin: 0; display: flex; flex-direction: column; padding: 28px; border-radius: var(--radius); background: #fff; scroll-snap-align: start; }
-.quote__stars { color: var(--amber); letter-spacing: 2px; }
-.quote blockquote { margin: 14px 0 24px; color: var(--ink); font-size: 18px; font-weight: 600; line-height: 1.5; }
-.quote figcaption { display: flex; gap: 14px; align-items: center; margin-top: auto; font-size: 14px; }
-.quote figcaption img { width: 48px; height: 48px; border-radius: 50%; }
-.quote figcaption strong { display: block; color: var(--ink); font-size: 15px; }
-.slider__dots { display: flex; gap: 8px; justify-content: center; margin-top: 28px; }
-.slider__dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 9px; background: #c9cfdb; cursor: pointer; transition: width .2s, background-color .2s; }
-.slider__dots button[aria-current="true"] { width: 26px; background: var(--brand); }
-@media (min-width: 768px) { .quote { flex-basis: calc((100% - 20px) / 2); padding: 32px; } }
-@media (min-width: 1200px) { .quote { flex-basis: calc((100% - 40px) / 3); } }
-
-/* FAQ accordion */
-.faq__grid { display: grid; gap: 32px; }
-.faq__intro .lead { margin: 16px 0 24px; }
-.accordion details { border-bottom: 1px solid var(--line); }
-.accordion details:first-child { border-top: 1px solid var(--line); }
-.accordion summary { display: flex; gap: 20px; justify-content: space-between; align-items: center; padding: 22px 0; color: var(--ink); font-size: 18px; font-weight: 700; line-height: 1.4; list-style: none; cursor: pointer; }
-.accordion summary::-webkit-details-marker { display: none; }
-.accordion summary i { position: relative; flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--soft); transition: background-color .2s, transform .3s; }
-.accordion summary i::before, .accordion summary i::after { content: ""; position: absolute; top: 50%; left: 50%; width: 12px; height: 2px; margin: -1px 0 0 -6px; border-radius: 2px; background: var(--ink); transition: transform .3s; }
-.accordion summary i::after { transform: rotate(90deg); }
-.accordion details[open] summary i { background: var(--brand); }
-.accordion details[open] summary i::before, .accordion details[open] summary i::after { background: #fff; }
-.accordion details[open] summary i::after { transform: rotate(0); }
-.accordion .answer { padding: 0 48px 24px 0; }
-@media (min-width: 992px) { .faq__grid { grid-template-columns: 4fr 7fr; gap: 80px; } }
-
-/* Posts query */
-.posts__top { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; }
-.posts__grid { display: grid; gap: 28px; }
-.post { display: flex; flex-direction: column; }
-.post__image { overflow: hidden; border-radius: var(--radius); aspect-ratio: 16 / 10; }
-.post__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
-.post:hover .post__image img { transform: scale(1.04); }
-.post__cat { margin-top: 20px; color: var(--brand); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.post h3 { margin-top: 8px; font-size: 21px; line-height: 1.3; }
-.post h3 a { text-decoration: none; }
-.post h3 a:hover { color: var(--brand); }
-.post p { margin-top: 10px; }
-.post__meta { margin-top: 14px; color: var(--muted); font-size: 14px; }
-@media (min-width: 768px) { .posts__grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .posts__grid { grid-template-columns: repeat(3, 1fr); gap: 32px; } }
-
-/* Footer */
-.footer { padding: 64px 0 28px; background: var(--navy); color: #a9b3cc; font-size: 15px; }
-.footer .logo { color: #fff; }
-.footer__grid { display: grid; gap: 40px; }
-.footer__about p { max-width: 320px; margin: 16px 0 22px; }
-.social { display: flex; gap: 10px; }
-.social a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: rgb(255 255 255 / .07); color: #fff; transition: background-color .2s; }
-.social a:hover { background: var(--brand); }
-.footer__cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
-.footer h4 { margin-bottom: 14px; color: #fff; font-size: 15px; letter-spacing: 0; }
-.footer ul { margin: 0; padding: 0; list-style: none; }
-.footer li { margin: 9px 0; }
-.footer a { text-decoration: none; }
-.footer__cols a:hover { color: #fff; }
-.footer__bottom { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; margin-top: 48px; padding-top: 24px; border-top: 1px solid rgb(255 255 255 / .1); font-size: 14px; }
-@media (min-width: 768px) { .footer { padding-top: 88px; } .footer__cols { grid-template-columns: repeat(4, 1fr); } }
-@media (min-width: 1024px) { .footer__grid { grid-template-columns: 4fr 8fr; gap: 64px; } }
-
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Header with dropdowns -->
-<header class="header">
-	<div class="container header__inner">
-		<a class="logo" href="#"><span class="logo__mark"></span>Signalry</a>
-		<nav class="nav" aria-label="Main">
-			<ul>
-				<li class="nav__item">
-					<button class="nav__link" aria-haspopup="true">Product <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
-					<div class="dropdown">
-						<a href="#"><i style="background:var(--brand-soft)"></i><div><strong>Feedback inbox</strong><span>Every ticket, survey and review in one place</span></div></a>
-						<a href="#"><i style="background:#e2f8f1"></i><div><strong>AI insights</strong><span>Themes and weekly summaries, found for you</span></div></a>
-						<a href="#"><i style="background:#ffeee8"></i><div><strong>Roadmaps</strong><span>Link requests to revenue and ship what matters</span></div></a>
-						<a href="#"><i style="background:#fff4dc"></i><div><strong>Integrations</strong><span>Help desk, chat, CRM, reviews and more</span></div></a>
-					</div>
-				</li>
-				<li class="nav__item">
-					<button class="nav__link" aria-haspopup="true">Solutions <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
-					<div class="dropdown">
-						<a href="#tabs"><i style="background:var(--brand-soft)"></i><div><strong>Product teams</strong><span>Decide what to build next</span></div></a>
-						<a href="#tabs"><i style="background:#e2f8f1"></i><div><strong>Support teams</strong><span>Tag and route tickets automatically</span></div></a>
-						<a href="#tabs"><i style="background:#ffeee8"></i><div><strong>Marketing teams</strong><span>Find promoters and real quotes</span></div></a>
-					</div>
-				</li>
-				<li class="nav__item"><a class="nav__link" href="#">Pricing</a></li>
-				<li class="nav__item"><a class="nav__link" href="#blog">Blog</a></li>
-				<li class="nav__item"><a class="nav__link" href="#customers">Customers</a></li>
-			</ul>
-		</nav>
-		<div class="header__actions">
-			<a class="header__signin" href="#">Sign in</a>
-			<a class="btn btn--primary btn--small" href="#">Start free</a>
-			<button class="burger" aria-label="Open menu" aria-expanded="false" data-menu-open><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M4 8h18M4 13h18M4 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-		</div>
-	</div>
-</header>
-
-<!-- Mobile menu -->
-<div class="menu" id="menu" aria-label="Menu">
-	<div class="menu__top">
-		<a class="logo" href="#"><span class="logo__mark"></span>Signalry</a>
-		<button class="burger" aria-label="Close menu" data-menu-close><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M6 6l14 14M20 6 6 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-	</div>
-	<ul>
-		<li><button class="menu__link" data-sub>Product <svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
-			<ul class="menu__sub"><li><a href="#">Feedback inbox</a></li><li><a href="#">AI insights</a></li><li><a href="#">Roadmaps</a></li><li><a href="#">Integrations</a></li></ul></li>
-		<li><button class="menu__link" data-sub>Solutions <svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
-			<ul class="menu__sub"><li><a href="#tabs">Product teams</a></li><li><a href="#tabs">Support teams</a></li><li><a href="#tabs">Marketing teams</a></li></ul></li>
-		<li><a class="menu__link" href="#">Pricing</a></li>
-		<li><a class="menu__link" href="#blog">Blog</a></li>
-		<li><a class="menu__link" href="#customers">Customers</a></li>
-	</ul>
-	<div class="menu__actions">
-		<a class="btn btn--secondary" href="#">Sign in</a>
-		<a class="btn btn--primary" href="#">Start free trial</a>
-	</div>
-</div>
+<div data-part="header"></div>
 
 <main>
 	<!-- Hero with image -->
@@ -287,7 +22,7 @@ p { margin: 0; }
 				<h1>Hear what every customer is <em>telling you</em></h1>
 				<p class="lead">Signalry gathers feedback from tickets, surveys, reviews and calls, then shows your team which problems matter most.</p>
 				<div class="hero__actions">
-					<a class="btn btn--primary" href="#">Start free trial
+					<a class="btn btn--primary" href="pricing.html">Start free trial
 						<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 					<a class="btn btn--secondary" href="#tour">Watch the tour</a>
 				</div>
@@ -299,6 +34,34 @@ p { margin: 0; }
 		</div>
 	</section>
 
+	<!-- NEW: logo marquee -->
+	<section class="logos" aria-label="Customers">
+		<div class="container">
+			<p class="logos__title">Trusted by 2,400+ product, support and marketing teams</p>
+			<div class="marquee">
+				<div class="marquee__track">
+					<img src="images/logos/northwind.svg" width="168" height="36" alt="Northwind">
+					<img src="images/logos/brightside.svg" width="172" height="36" alt="Brightside">
+					<img src="images/logos/fieldnote.svg" width="152" height="36" alt="Fieldnote">
+					<img src="images/logos/orbitly.svg" width="128" height="36" alt="Orbitly">
+					<img src="images/logos/lumen.svg" width="124" height="36" alt="Lumen">
+					<img src="images/logos/kitepay.svg" width="134" height="36" alt="Kitepay">
+					<img src="images/logos/harbor.svg" width="138" height="36" alt="Harbor">
+					<img src="images/logos/quanta.svg" width="132" height="36" alt="Quanta">
+					<!-- The same logos again, so the loop is seamless (hidden from screen readers) -->
+					<img src="images/logos/northwind.svg" width="168" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/brightside.svg" width="172" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/fieldnote.svg" width="152" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/orbitly.svg" width="128" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/lumen.svg" width="124" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/kitepay.svg" width="134" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/harbor.svg" width="138" height="36" alt="" aria-hidden="true">
+					<img src="images/logos/quanta.svg" width="132" height="36" alt="" aria-hidden="true">
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- Counters -->
 	<section class="stats" aria-label="Signalry in numbers">
 		<div class="container stats__grid">
@@ -306,6 +69,25 @@ p { margin: 0; }
 			<div class="stat"><div class="stat__value"><b data-count="2400">0</b><span>+</span></div><div class="stat__label">Teams listening with Signalry</div></div>
 			<div class="stat"><div class="stat__value"><b data-count="31">0</b><span>h</span></div><div class="stat__label">Saved per team, every week</div></div>
 			<div class="stat"><div class="stat__value"><b data-count="4.8" data-decimals="1">0</b><span>/5</span></div><div class="stat__label">Average rating from customers</div></div>
+		</div>
+	</section>
+
+	<!-- NEW: feature grid -->
+	<section class="section features" id="features">
+		<div class="container">
+			<div class="head center">
+				<span class="eyebrow">Features</span>
+				<h2 class="h2">Everything customers say, finally in one place</h2>
+				<p class="lead">Connect your tools once. Signalry reads, tags and sums up every piece of feedback, so nobody has to.</p>
+			</div>
+			<div class="features__grid">
+				<article class="feature"><div class="feature__icon" style="background:var(--brand-soft);color:var(--brand)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div><h3>One feedback inbox</h3><p>Tickets, surveys, app reviews, calls and chats arrive in one place, without copy and paste.</p></article>
+				<article class="feature"><div class="feature__icon" style="background:var(--mint-soft);color:#0b8a68"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/><path d="M19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z"/></svg></div><h3>Themes found by AI</h3><p>Every piece of feedback gets a theme and a sentiment the moment it lands. You review, it learns.</p></article>
+				<article class="feature"><div class="feature__icon" style="background:var(--coral-soft);color:#e25a37"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><h3>Trends you can trust</h3><p>See which issues grow week by week, by plan, segment or region, with real numbers behind every chart.</p></article>
+				<article class="feature"><div class="feature__icon" style="background:var(--amber-soft);color:#b7811b"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div><h3>Weekly AI summaries</h3><p>Every Monday, a short read on what changed, what’s new and what needs attention, for the whole team.</p></article>
+				<article class="feature"><div class="feature__icon" style="background:var(--brand-soft);color:var(--brand)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h12M3 18h6"/><circle cx="19" cy="17" r="3"/></svg></div><h3>Roadmaps with revenue</h3><p>Link requests to roadmap items and see how many customers, and how much revenue, each one represents.</p></article>
+				<article class="feature"><div class="feature__icon" style="background:var(--mint-soft);color:#0b8a68"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div><h3>Alerts when issues spike</h3><p>Get a Slack or email alert when a theme suddenly grows, so you hear about problems before churn does.</p></article>
+			</div>
 		</div>
 	</section>
 
@@ -325,7 +107,7 @@ p { margin: 0; }
 	</section>
 
 	<!-- Tab slider -->
-	<section class="section tabs" id="tabs">
+	<section class="section tabs" id="tabs" data-tabs="slide">
 		<div class="container">
 			<div class="head center">
 				<span class="eyebrow">Solutions</span>
@@ -393,14 +175,76 @@ p { margin: 0; }
 		</div>
 	</section>
 
+	<!-- NEW: pricing (a Monthly/Yearly tab slider, fade) -->
+	<section class="section pricing" id="pricing" data-tabs="fade">
+		<div class="container">
+			<div class="head center">
+				<span class="eyebrow">Pricing</span>
+				<h2 class="h2">Pay for feedback, not for seats</h2>
+				<p class="lead">Every plan includes unlimited users and a 14-day free trial.</p>
+			</div>
+			<div role="tablist" class="tabs__list" aria-label="Billing">
+				<button role="tab" class="tabs__tab" aria-selected="true">Monthly</button>
+				<button role="tab" class="tabs__tab" aria-selected="false">Yearly <small>−20%</small></button>
+			</div>
+			<div class="tabs__viewport">
+				<div class="tabs__track">
+					<div role="tabpanel" class="tabs__panel">
+						<div class="plan">
+							<h3>Starter</h3><p class="plan__for">For small teams getting started</p>
+							<p class="plan__price"><strong>$59</strong><span>/ month</span></p><p class="plan__note">Up to 2,000 pieces of feedback a month</p>
+							<a class="btn btn--secondary" href="pricing.html">Start free trial</a>
+							<ul class="checks"><li>3 sources</li><li>AI themes and sentiment</li><li>Weekly summaries</li><li>Email support</li></ul>
+						</div>
+						<div class="plan plan--featured">
+							<span class="plan__tag">Most popular</span>
+							<h3>Growth</h3><p class="plan__for">For teams that run on feedback</p>
+							<p class="plan__price"><strong>$179</strong><span>/ month</span></p><p class="plan__note">Up to 10,000 pieces of feedback a month</p>
+							<a class="btn btn--primary" href="pricing.html">Start free trial</a>
+							<ul class="checks"><li>Unlimited sources</li><li>Roadmaps with revenue</li><li>Spike alerts in Slack</li><li>Priority support</li></ul>
+						</div>
+						<div class="plan">
+							<h3>Enterprise</h3><p class="plan__for">For larger companies</p>
+							<p class="plan__price"><strong>Custom</strong></p><p class="plan__note">Any volume, billed yearly</p>
+							<a class="btn btn--secondary" href="contact.html">Talk to sales</a>
+							<ul class="checks"><li>SSO and audit logs</li><li>Data region of your choice</li><li>Custom AI models</li><li>Dedicated success manager</li></ul>
+						</div>
+					</div>
+					<div role="tabpanel" class="tabs__panel">
+						<div class="plan">
+							<h3>Starter</h3><p class="plan__for">For small teams getting started</p>
+							<p class="plan__price"><strong>$47</strong><span>/ month</span></p><p class="plan__note">$564 billed yearly</p>
+							<a class="btn btn--secondary" href="pricing.html">Start free trial</a>
+							<ul class="checks"><li>3 sources</li><li>AI themes and sentiment</li><li>Weekly summaries</li><li>Email support</li></ul>
+						</div>
+						<div class="plan plan--featured">
+							<span class="plan__tag">Most popular</span>
+							<h3>Growth</h3><p class="plan__for">For teams that run on feedback</p>
+							<p class="plan__price"><strong>$143</strong><span>/ month</span></p><p class="plan__note">$1,716 billed yearly</p>
+							<a class="btn btn--primary" href="pricing.html">Start free trial</a>
+							<ul class="checks"><li>Unlimited sources</li><li>Roadmaps with revenue</li><li>Spike alerts in Slack</li><li>Priority support</li></ul>
+						</div>
+						<div class="plan">
+							<h3>Enterprise</h3><p class="plan__for">For larger companies</p>
+							<p class="plan__price"><strong>Custom</strong></p><p class="plan__note">Any volume, billed yearly</p>
+							<a class="btn btn--secondary" href="contact.html">Talk to sales</a>
+							<ul class="checks"><li>SSO and audit logs</li><li>Data region of your choice</li><li>Custom AI models</li><li>Dedicated success manager</li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p class="pricing__foot">Prices in USD, excluding tax. <a class="link" href="pricing.html">Compare all features →</a></p>
+		</div>
+	</section>
+
 	<!-- FAQ accordion -->
-	<section class="section faq">
+	<section class="section faq section--soft">
 		<div class="container faq__grid">
 			<div class="faq__intro">
 				<span class="eyebrow">FAQ</span>
 				<h2 class="h2">Questions, answered</h2>
 				<p class="lead">Can’t find what you’re looking for? Our team replies within a few hours.</p>
-				<a class="btn btn--secondary" href="#">Contact sales</a>
+				<a class="btn btn--secondary" href="contact.html">Contact sales</a>
 			</div>
 			<div class="accordion">
 				<details open><summary>How long does setup take?<i aria-hidden="true"></i></summary><div class="answer"><p>Most teams connect their first source in under ten minutes. Signalry starts finding themes as soon as feedback arrives, and the first weekly summary is ready the following Monday.</p></div></details>
@@ -413,135 +257,72 @@ p { margin: 0; }
 	</section>
 
 	<!-- Posts query -->
-	<section class="section posts" id="blog" style="padding-top:0">
+	<section class="section posts" id="blog">
 		<div class="container">
 			<div class="posts__top">
 				<div>
 					<span class="eyebrow">Blog</span>
 					<h2 class="h2">Latest from the blog</h2>
 				</div>
-				<a class="link" href="#">View all posts →</a>
+				<a class="link" href="post.html">View all posts →</a>
 			</div>
 			<div class="posts__grid">
 				<article class="post">
-					<a class="post__image" href="#"><img src="images/cover-1.webp" width="1280" height="720" alt="" loading="lazy"></a>
+					<a class="post__image" href="post.html"><img src="images/cover-1.webp" width="1280" height="720" alt="" loading="lazy"></a>
 					<div class="post__cat">Guides</div>
-					<h3><a href="#">How to run a feedback review your whole team will join</a></h3>
+					<h3><a href="post.html">How to run a feedback review your whole team will join</a></h3>
 					<p>A 30-minute weekly ritual that keeps product, support and marketing on the same page.</p>
 					<div class="post__meta">Oct 28, 2026 · 6 min read</div>
 				</article>
 				<article class="post">
-					<a class="post__image" href="#"><img src="images/cover-2.webp" width="1280" height="720" alt="" loading="lazy"></a>
+					<a class="post__image" href="post.html"><img src="images/cover-2.webp" width="1280" height="720" alt="" loading="lazy"></a>
 					<div class="post__cat">Research</div>
-					<h3><a href="#">What 18 million pieces of feedback taught us about churn</a></h3>
+					<h3><a href="post.html">What 18 million pieces of feedback taught us about churn</a></h3>
 					<p>The early warning signs customers give before they leave, and where to find them.</p>
 					<div class="post__meta">Oct 14, 2026 · 8 min read</div>
 				</article>
 				<article class="post">
-					<a class="post__image" href="#"><img src="images/cover-3.webp" width="1280" height="720" alt="" loading="lazy"></a>
+					<a class="post__image" href="post.html"><img src="images/cover-3.webp" width="1280" height="720" alt="" loading="lazy"></a>
 					<div class="post__cat">Product</div>
-					<h3><a href="#">Introducing weekly AI summaries</a></h3>
+					<h3><a href="post.html">Introducing weekly AI summaries</a></h3>
 					<p>Every Monday, a short read on what changed, what’s new and what needs attention.</p>
 					<div class="post__meta">Sep 30, 2026 · 4 min read</div>
 				</article>
 			</div>
 		</div>
 	</section>
+
+	<!-- NEW: CTA band with a contact form (Contact Form 7 in both builds) -->
+	<section class="cta" id="demo">
+		<div class="container cta__grid">
+			<div>
+				<span class="eyebrow" style="color:var(--mint)">Book a demo</span>
+				<h2 class="h2">See what your customers are telling you</h2>
+				<p class="lead">A 30-minute call with our team, using your own feedback. No slides, no pressure.</p>
+				<ul class="checks"><li>Bring a CSV or connect a source on the call</li><li>Get your top five themes, free</li><li>Leave with a plan, whether you buy or not</li></ul>
+			</div>
+			<div class="form-card">
+				<h3>Book your demo</h3>
+				<p>We reply within one working day.</p>
+				<form class="form">
+					<div class="form__row">
+						<div class="field"><label for="d-name">Full name</label><input id="d-name" name="name" autocomplete="name" required></div>
+						<div class="field"><label for="d-email">Work email</label><input id="d-email" name="email" type="email" autocomplete="email" required></div>
+					</div>
+					<div class="form__row">
+						<div class="field"><label for="d-company">Company</label><input id="d-company" name="company" autocomplete="organization"></div>
+						<div class="field"><label for="d-size">Team size</label><select id="d-size" name="size"><option>1–10</option><option>11–50</option><option>51–200</option><option>201+</option></select></div>
+					</div>
+					<label class="form__consent"><input type="checkbox" required> I agree to Signalry contacting me about this request. See our privacy policy.</label>
+					<button class="btn btn--primary btn--block" type="submit">Book my demo</button>
+				</form>
+			</div>
+		</div>
+	</section>
 </main>
 
-<!-- Footer -->
-<footer class="footer">
-	<div class="container">
-		<div class="footer__grid">
-			<div class="footer__about">
-				<a class="logo" href="#"><span class="logo__mark"></span>Signalry</a>
-				<p>Customer feedback analytics for teams that want to listen better. Signalry is a made-up product for a performance demo.</p>
-				<div class="social">
-					<a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg></a>
-					<a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77zm-1.08 16.17h1.7L7.4 4.73H5.58z"/></svg></a>
-					<a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.75 15.02V8.98L15.5 12z"/></svg></a>
-				</div>
-			</div>
-			<div class="footer__cols">
-				<div><h4>Product</h4><ul><li><a href="#">Feedback inbox</a></li><li><a href="#">AI insights</a></li><li><a href="#">Roadmaps</a></li><li><a href="#">Integrations</a></li><li><a href="#">Pricing</a></li></ul></div>
-				<div><h4>Solutions</h4><ul><li><a href="#">Product teams</a></li><li><a href="#">Support teams</a></li><li><a href="#">Marketing teams</a></li><li><a href="#">Enterprise</a></li></ul></div>
-				<div><h4>Resources</h4><ul><li><a href="#">Blog</a></li><li><a href="#">Guides</a></li><li><a href="#">Help centre</a></li><li><a href="#">API docs</a></li></ul></div>
-				<div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li><li><a href="#">Security</a></li></ul></div>
-			</div>
-		</div>
-		<div class="footer__bottom">
-			<span>© 2026 Signalry. A demo site.</span>
-			<span><a href="#">Privacy</a> · <a href="#">Terms</a></span>
-		</div>
-	</div>
-</footer>
+<div data-part="footer"></div>
 
-<script>
-// Header border on scroll
-const header = document.querySelector('.header');
-addEventListener('scroll', () => header.classList.toggle('is-scrolled', scrollY > 8), { passive: true });
-
-// Mobile menu and its submenus
-const menu = document.getElementById('menu');
-const opener = document.querySelector('[data-menu-open]');
-opener.addEventListener('click', () => { menu.classList.add('is-open'); opener.setAttribute('aria-expanded', 'true'); });
-menu.querySelector('[data-menu-close]').addEventListener('click', () => { menu.classList.remove('is-open'); opener.setAttribute('aria-expanded', 'false'); });
-menu.querySelectorAll('[data-sub]').forEach(b => b.addEventListener('click', () => b.parentElement.classList.toggle('is-open')));
-menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('is-open')));
-
-// Counters: count up once, when they scroll into view
-const counters = document.querySelectorAll('[data-count]');
-const countUp = el => {
-	const end = parseFloat(el.dataset.count), dec = +(el.dataset.decimals || 0), t0 = performance.now();
-	const step = now => {
-		const p = Math.min((now - t0) / 1600, 1), e = 1 - Math.pow(1 - p, 3);
-		el.textContent = (end * e).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
-		if (p < 1) requestAnimationFrame(step);
-	};
-	requestAnimationFrame(step);
-};
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { countUp(e.target); io.unobserve(e.target); } }), { threshold: .6 });
-counters.forEach(c => io.observe(c));
-
-// Video: play on click
-const frame = document.querySelector('.video__frame');
-frame.querySelector('.video__play').addEventListener('click', e => {
-	const v = frame.querySelector('video');
-	v.controls = true; v.play(); e.currentTarget.remove();
-});
-
-// Tab slider
-const tabs = [...document.querySelectorAll('.tabs__tab')];
-const track = document.querySelector('.tabs__track');
-tabs.forEach((t, i) => t.addEventListener('click', () => {
-	tabs.forEach(x => x.setAttribute('aria-selected', x === t));
-	track.style.transform = `translateX(-${i * 100}%)`;
-}));
-
-// Testimonials slider: scroll snap + arrows + dots
-const strack = document.querySelector('.slider__track');
-const slides = [...strack.children];
-const dots = document.querySelector('.slider__dots');
-const prev = document.querySelector('[data-prev]'), next = document.querySelector('[data-next]');
-const gap = 20;
-const perView = () => Math.max(1, Math.round(strack.clientWidth / (slides[0].offsetWidth + gap)));
-const pages = () => slides.length - perView() + 1;
-const go = i => strack.scrollTo({ left: slides[Math.max(0, Math.min(i, slides.length - 1))].offsetLeft - slides[0].offsetLeft });
-const current = () => Math.round(strack.scrollLeft / (slides[0].offsetWidth + gap));
-const renderDots = () => {
-	dots.innerHTML = '';
-	for (let i = 0; i < pages(); i++) { const d = document.createElement('button'); d.setAttribute('aria-label', `Slide ${i + 1}`); d.onclick = () => go(i); dots.append(d); }
-	update();
-};
-const update = () => {
-	const c = current();
-	[...dots.children].forEach((d, i) => d.setAttribute('aria-current', i === c));
-	prev.disabled = c <= 0; next.disabled = c >= pages() - 1;
-};
-prev.onclick = () => go(current() - 1); next.onclick = () => go(current() + 1);
-strack.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
-addEventListener('resize', renderDots);
-renderDots();
-</script>
+<script src="site.js"></script>
 </body>
 </html>

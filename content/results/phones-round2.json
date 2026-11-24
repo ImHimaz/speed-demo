@@ -1,0 +1,274 @@
+{
+ "mid-range": {
+  "elite": [
+   {
+    "fcp": 3104,
+    "lcp": 3104,
+    "load": 5322,
+    "tbt": 161,
+    "taps": {
+     "menu open": 64,
+     "menu close": 32,
+     "tab": 32,
+     "faq": 24,
+     "slider next": 56
+    }
+   },
+   {
+    "fcp": 2960,
+    "lcp": 3028,
+    "load": 5404,
+    "tbt": 137,
+    "taps": {
+     "menu open": 40,
+     "menu close": 32,
+     "tab": 24,
+     "faq": 24,
+     "slider next": 32
+    }
+   },
+   {
+    "fcp": 2860,
+    "lcp": 2860,
+    "load": 5156,
+    "tbt": 157,
+    "taps": {
+     "menu open": 88,
+     "menu close": 40,
+     "tab": 32,
+     "faq": 24,
+     "slider next": 48
+    }
+   },
+   {
+    "fcp": 3196,
+    "lcp": 3288,
+    "load": 5664,
+    "tbt": 141,
+    "taps": {
+     "menu open": 64,
+     "menu close": 48,
+     "tab": 24,
+     "faq": 32,
+     "slider next": 24
+    }
+   },
+   {
+    "fcp": 2816,
+    "lcp": 2892,
+    "load": 5300,
+    "tbt": 138,
+    "taps": {
+     "menu open": 56,
+     "menu close": 40,
+     "tab": 40,
+     "faq": 40,
+     "slider next": 40
+    }
+   }
+  ],
+  "elementor": [
+   {
+    "fcp": 3584,
+    "lcp": 3896,
+    "load": 7691,
+    "tbt": 135,
+    "taps": {
+     "menu open": 40,
+     "menu close": 24,
+     "tab": 48,
+     "faq": 40,
+     "slider next": 32
+    }
+   },
+   {
+    "fcp": 3228,
+    "lcp": 3540,
+    "load": 7342,
+    "tbt": 200,
+    "taps": {
+     "menu open": 48,
+     "menu close": 24,
+     "tab": 64,
+     "faq": 40,
+     "slider next": 48
+    }
+   },
+   {
+    "fcp": 3380,
+    "lcp": 3676,
+    "load": 7807,
+    "tbt": 181,
+    "taps": {
+     "menu open": 40,
+     "menu close": 24,
+     "tab": 40,
+     "faq": 32,
+     "slider next": 32
+    }
+   },
+   {
+    "fcp": 3444,
+    "lcp": 3788,
+    "load": 7631,
+    "tbt": 212,
+    "taps": {
+     "menu open": 128,
+     "menu close": 32,
+     "tab": 64,
+     "faq": 48,
+     "slider next": 32
+    }
+   },
+   {
+    "fcp": 3312,
+    "lcp": 3564,
+    "load": 7531,
+    "tbt": 184,
+    "taps": {
+     "menu open": 56,
+     "menu close": 32,
+     "tab": 56,
+     "faq": 40,
+     "slider next": 32
+    }
+   }
+  ]
+ },
+ "budget": {
+  "elite": [
+   {
+    "fcp": 3200,
+    "lcp": 3200,
+    "load": 7054,
+    "tbt": 289,
+    "taps": {
+     "menu open": 56,
+     "menu close": 32,
+     "tab": 32,
+     "faq": 32,
+     "slider next": 40
+    }
+   },
+   {
+    "fcp": 3100,
+    "lcp": 3100,
+    "load": 6851,
+    "tbt": 291,
+    "taps": {
+     "menu open": 64,
+     "menu close": 48,
+     "tab": 32,
+     "faq": 40,
+     "slider next": 40
+    }
+   },
+   {
+    "fcp": 3248,
+    "lcp": 3248,
+    "load": 7114,
+    "tbt": 308,
+    "taps": {
+     "menu open": 64,
+     "menu close": 40,
+     "tab": 32,
+     "faq": 40,
+     "slider next": 40
+    }
+   },
+   {
+    "fcp": 4004,
+    "lcp": 4004,
+    "load": 7830,
+    "tbt": 303,
+    "taps": {
+     "menu open": 72,
+     "menu close": 56,
+     "tab": 24,
+     "faq": 40,
+     "slider next": 32
+    }
+   },
+   {
+    "fcp": 3396,
+    "lcp": 3396,
+    "load": 7133,
+    "tbt": 285,
+    "taps": {
+     "menu open": 64,
+     "menu close": 48,
+     "tab": 40,
+     "faq": 40,
+     "slider next": 40
+    }
+   }
+  ],
+  "elementor": [
+   {
+    "fcp": 3932,
+    "lcp": 4272,
+    "load": 10794,
+    "tbt": 397,
+    "taps": {
+     "menu open": 64,
+     "menu close": 24,
+     "tab": 64,
+     "faq": 56,
+     "slider next": 48
+    }
+   },
+   {
+    "fcp": 3472,
+    "lcp": 3916,
+    "load": 10468,
+    "tbt": 317,
+    "taps": {
+     "menu open": 64,
+     "menu close": 40,
+     "tab": 80,
+     "faq": 48,
+     "slider next": 48
+    }
+   },
+   {
+    "fcp": 3568,
+    "lcp": 4084,
+    "load": 10551,
+    "tbt": 392,
+    "taps": {
+     "menu open": 64,
+     "menu close": 32,
+     "tab": 88,
+     "faq": 56,
+     "slider next": 56
+    }
+   },
+   {
+    "fcp": 4780,
+    "lcp": 4848,
+    "load": 13358,
+    "tbt": 401,
+    "taps": {
+     "menu open": 64,
+     "menu close": 32,
+     "tab": 72,
+     "faq": 56,
+     "slider next": 40
+    }
+   },
+   {
+    "fcp": 3536,
+    "lcp": 3960,
+    "load": 10608,
+    "tbt": 398,
+    "taps": {
+     "menu open": 56,
+     "menu close": 40,
+     "tab": 80,
+     "faq": 56,
+     "slider next": 48
+    }
+   }
+  ]
+ }
+}

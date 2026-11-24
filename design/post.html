@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to run a feedback review your whole team will join · Signalry (demo design)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div data-part="header"></div>
+
+<main>
+	<!-- Single post template: header (category, title, meta), cover, content, author box, related posts -->
+	<article>
+		<header class="article-head">
+			<div class="container container--narrow">
+				<a class="eyebrow" href="#" style="text-decoration:none">Guides</a>
+				<h1>How to run a feedback review your whole team will join</h1>
+				<div class="article-meta">
+					<img src="images/avatar-sr.webp" width="96" height="96" alt="">
+					<span>By <strong>Sara Rahman</strong></span><span>·</span><span>Oct 28, 2026</span><span>·</span><span>6 min read</span>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<figure class="article-cover" style="margin:0 auto"><img src="images/cover-1.webp" width="1280" height="720" alt="" fetchpriority="high"></figure>
+		</div>
+		<div class="container container--narrow">
+			<div class="prose">
+				<p>Most teams agree that customer feedback matters. Far fewer have a habit that turns it into decisions. The fix isn’t another dashboard: it’s a 30-minute meeting, once a week, that product, support and marketing actually want to attend.</p>
+				<p>Here’s the format we use at Signalry, and the one our customers copy most often.</p>
+				<h2>1. Start with what changed, not everything</h2>
+				<p>Nobody wants to scroll through 400 tickets. Open with the three themes that grew most since last week, and one that shrank. Change is what makes people lean in.</p>
+				<ul>
+					<li>Top three growing themes, with counts</li>
+					<li>One theme that went down, and why</li>
+					<li>One quote that says it better than a chart</li>
+				</ul>
+				<h2>2. Put a number on every theme</h2>
+				<p>“Customers are confused by billing” starts a debate. “42 customers, $310k in ARR, mentioned billing this month” starts a plan. Attach customer counts and revenue to every theme you discuss.</p>
+				<blockquote>The meeting got shorter the day we started showing revenue next to each theme. Nobody argues with the number.</blockquote>
+				<figure>
+					<img src="images/insights.webp" width="1200" height="795" alt="Signalry’s insights view: themes ranked by mentions and revenue" loading="lazy">
+					<figcaption>Themes ranked by mentions, with the revenue behind each one.</figcaption>
+				</figure>
+				<h2>3. Leave with owners, not opinions</h2>
+				<p>End with a short list: each item gets an owner and a date. Product takes the roadmap items, support takes the help articles and macros, marketing takes the quotes worth sharing.</p>
+				<ol>
+					<li>Decide: fix, build, explain or ignore</li>
+					<li>Assign one owner per item</li>
+					<li>Check last week’s items first next time</li>
+				</ol>
+				<h2>4. Close the loop with customers</h2>
+				<p>When something ships, tell the customers who asked for it. It takes minutes with a saved list, and it’s the single best way to get more feedback next time.</p>
+				<p>Try it for four weeks. If the meeting isn’t worth the time by then, change the format. In our experience, it will be.</p>
+			</div>
+			<div class="author">
+				<img src="images/avatar-sr.webp" width="96" height="96" alt="">
+				<div><strong>Sara Rahman</strong><p>VP Customer Success at Signalry. Sara has run feedback programmes at three SaaS companies and still reads every NPS comment.</p></div>
+			</div>
+		</div>
+	</article>
+
+	<!-- Related posts (posts query, 3 latest in the same category) -->
+	<section class="section posts">
+		<div class="container">
+			<div class="posts__top"><h2 class="h2">Keep reading</h2><a class="link" href="#">All guides →</a></div>
+			<div class="posts__grid">
+				<article class="post">
+					<a class="post__image" href="#"><img src="images/cover-2.webp" width="1280" height="720" alt="" loading="lazy"></a>
+					<div class="post__cat">Research</div>
+					<h3><a href="#">What 18 million pieces of feedback taught us about churn</a></h3>
+					<div class="post__meta">Oct 14, 2026 · 8 min read</div>
+				</article>
+				<article class="post">
+					<a class="post__image" href="#"><img src="images/cover-3.webp" width="1280" height="720" alt="" loading="lazy"></a>
+					<div class="post__cat">Product</div>
+					<h3><a href="#">Introducing weekly AI summaries</a></h3>
+					<div class="post__meta">Sep 30, 2026 · 4 min read</div>
+				</article>
+				<article class="post">
+					<a class="post__image" href="#"><img src="images/cover-1.webp" width="1280" height="720" alt="" loading="lazy"></a>
+					<div class="post__cat">Guides</div>
+					<h3><a href="#">Five survey questions that actually predict churn</a></h3>
+					<div class="post__meta">Sep 16, 2026 · 5 min read</div>
+				</article>
+			</div>
+		</div>
+	</section>
+</main>
+
+<div data-part="footer"></div>
+
+<script src="site.js"></script>
+</body>
+</html>
