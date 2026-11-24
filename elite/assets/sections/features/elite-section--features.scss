@@ -1,0 +1,19 @@
+// Label: Features
+// elite/section → Block Classes. Six icon cards in a grid (1 / 2 / 3
+// across), each lifting on hover.
+@use "../../styles/abstracts" as *;
+
+.elite-section--features {
+
+	> .section-inner {
+		padding-block: var(--space-section);
+	}
+
+	.elite-row {
+		row-gap: 20px;
+
+		@include media-breakpoint-up(md) {
+			row-gap: 24px;
+		}
+	}
+}

@@ -97,7 +97,7 @@ wp-elite/
 │  ├─ setup.php         theme supports, editor styles, pattern category, colour palette
 │  ├─ manifest.php      reads the generated assets/json/ files
 │  ├─ assets.php        global CSS; loads each feature folder where it's used
-│  ├─ fonts.php         preloads the body font
+│  ├─ fonts.php         font preloads (none by default)
 │  └─ integrations/     elite-blocks.php (classes, text styles, icons for the plugin), megamenu.php
 ├─ parts/  templates/   layout only: header part, a pattern, footer part (`site-header` / `site-footer`)
 ├─ patterns/            named by group: header-*, footer-*, section-*, page-*, template-*
@@ -233,8 +233,11 @@ Things to know:
 
 **Fonts** are self-hosted: one folder per family in `assets/fonts/` (the `.woff2` files and their licence), registered in `theme.json` under `settings.typography.fontFamilies[].fontFace`. WordPress then writes the `@font-face` rules on the site and in the editor, and the family shows in the editor's font picker.
 
-- **Sample:** Manrope (variable, weights 200–800, SIL Open Font License, `assets/fonts/manrope/OFL.txt`) as the **Body** family, used by the whole site through the Body text style. Swap it by replacing the folder and the `fontFace` entry; keep the slug `body`.
-- **Loading:** `font-display: swap` (text shows at once in a fallback font). The body font's files are **preloaded** first thing in `<head>` (`inc/fonts.php`); the `wp_elite_preload_fonts` filter picks which families (slugs) to preload: only what the top of every page uses, since each preload competes with the page's first image.
+- **Sample:** Manrope (variable, weights 200–800, SIL Open Font License, `assets/fonts/manrope/OFL.txt`) as the **Body** family, used by the whole site through the Body text style. Swap it by replacing the folder and the `fontFace` entries; keep the slug `body`.
+- **Split by alphabet**, as Google Fonts serves them: two files, each a `fontFace` entry with its `unicodeRange`. **Latin** (`Manrope-Latin-…woff2`, 23 KB: English and Western European) loads on every page; **Latin Extended + Vietnamese** (`Manrope-LatinExt-…woff2`, 18 KB) only on pages with one of its letters (Ł, ő, ş, ă…). Greek and Cyrillic are left out (the full font was 53 KB). Made from the full font (Google Fonts / github.com/sharanda/manrope) with fonttools, ranges as in the theme.json entries, all OpenType features and the weight axis kept:
+  `pyftsubset Manrope-VariableFont_wght.woff2 --unicodes="<range>" --layout-features='*' --flavor=woff2 --output-file=Manrope-Latin-VariableFont_wght.woff2` (fonttools and brotli: `pip install fonttools brotli`). A project needing Greek or Cyrillic adds a file and an entry the same way.
+- **A size-matched fallback:** the Body family's second name is **Manrope Fallback** (`assets/styles/base/_fonts.scss`): Arial, or Helvetica on Apple devices, scaled with `size-adjust` and `ascent-` / `descent-` / `line-gap-override` to Manrope's average width and line height, so the swap to Manrope moves nothing. Values from Manrope at weight 400 against Arial (average width over English letter frequencies, the method Next.js and Capsize use); a different body font needs its own.
+- **Loading:** `font-display: swap` (text shows at once in a fallback font, then the font swaps in). **No font is preloaded by default** (`inc/fonts.php`): text doesn't wait for the font anyway, and on a slow connection a preload takes bandwidth from the page's CSS and pushes the first paint back (about 1 s for the then 53 KB Manrope file on a throttled 4G phone, in the Nov 2026 speed test). To preload where the swap must not show, name the families (slugs) with the `wp_elite_preload_fonts` filter, e.g. `add_filter( 'wp_elite_preload_fonts', fn () => array( 'body' ) );`: only what the top of every page uses, since each preload competes with the page's CSS and first image. A split family preloads its basic Latin file only.
 - **Heading** is a second family preset, pointing to the Body family until a project sets its own (`"fontFamily": "var(--wp--preset--font-family--body)"`). Titles 1–6 use it (`font-family: $-heading` in `_text-styles.scss`), so a different heading font is one change: add its folder (woff2 files and licence) and set the Heading preset's `fontFamily` and `fontFace` in theme.json. Add its slug to `wp_elite_preload_fonts` if the top of every page uses it. Give any other style the Heading font the same way (e.g. big display numbers).
 
 **Images** for the theme's own design live in `assets/images/`.

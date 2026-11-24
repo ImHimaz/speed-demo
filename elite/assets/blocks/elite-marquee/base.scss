@@ -1,0 +1,9 @@
+// Every Elite Marquee (loads with the block): its pause button fades to its
+// hover colour like the theme's other buttons.
+@use "../../styles/abstracts" as *;
+
+.elite-marquee__toggle {
+	transition:
+		background-color $duration-fast $ease,
+		color $duration-fast $ease;
+}

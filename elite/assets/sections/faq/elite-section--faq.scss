@@ -4,6 +4,7 @@
 @use "../../styles/abstracts" as *;
 
 .elite-section--faq {
+	background: var(--wp--preset--color--surface);
 
 	> .section-inner {
 		padding-block: var(--space-section);

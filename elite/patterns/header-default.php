@@ -4,7 +4,7 @@
  * Slug: wp-elite/header-default
  * Categories: header
  * Block Types: core/template-part/header
- * Description: An Elite Section (elite-section--header) with an Elite Div bar: logo, the menu (Product and Solutions dropdowns, then links), "Sign in" and "Start free" (Elite Buttons); the header template part's content. Below the laptop width the menu opens from a button, with the logo at its top and the two buttons under the links.
+ * Description: An Elite Section (elite-section--header) with an Elite Div bar: logo, the menu (Product, Solutions and Company dropdowns; Pricing and Blog links), "Sign in" and "Start free" (Elite Buttons); the header template part's content. Below the laptop width the menu opens from a button, with the logo at its top and the two buttons under the links.
  *
  * @package WpElite
  */
@@ -47,12 +47,12 @@ $wp_elite_button = static function ( array $attributes ): void {
 <!-- wp:navigation {"overlayMenu":"mobile","overlayBackgroundColor":"base","overlayTextColor":"contrast","className":"site-header__nav","layout":{"type":"flex","justifyContent":"left"}} -->
 <!-- wp:site-logo {"width":132,"className":"site-header__menu-logo"} /-->
 
-<!-- wp:navigation-submenu {"label":"<?php esc_attr_e( 'Product', 'wp-elite' ); ?>","url":"#","kind":"custom"} -->
+<!-- wp:navigation-submenu {"label":"<?php esc_attr_e( 'Product', 'wp-elite' ); ?>","url":"<?php echo esc_url( home_url( '/#features' ) ); ?>","kind":"custom"} -->
 <?php
-$wp_elite_link( __( 'Feedback inbox', 'wp-elite' ), '#', __( 'Every ticket, survey and review in one place', 'wp-elite' ) );
-$wp_elite_link( __( 'AI insights', 'wp-elite' ), '#', __( 'Themes and weekly summaries, found for you', 'wp-elite' ) );
-$wp_elite_link( __( 'Roadmaps', 'wp-elite' ), '#', __( 'Link requests to revenue and ship what matters', 'wp-elite' ) );
-$wp_elite_link( __( 'Integrations', 'wp-elite' ), '#', __( 'Help desk, chat, CRM, reviews and more', 'wp-elite' ) );
+$wp_elite_link( __( 'Feedback inbox', 'wp-elite' ), home_url( '/#features' ), __( 'Every ticket, survey and review in one place', 'wp-elite' ) );
+$wp_elite_link( __( 'AI insights', 'wp-elite' ), home_url( '/#features' ), __( 'Themes and weekly summaries, found for you', 'wp-elite' ) );
+$wp_elite_link( __( 'Roadmaps', 'wp-elite' ), home_url( '/#features' ), __( 'Link requests to revenue and ship what matters', 'wp-elite' ) );
+$wp_elite_link( __( 'Integrations', 'wp-elite' ), home_url( '/#features' ), __( 'Help desk, chat, CRM, reviews and more', 'wp-elite' ) );
 ?>
 <!-- /wp:navigation-submenu -->
 
@@ -65,18 +65,24 @@ $wp_elite_link( __( 'Marketing teams', 'wp-elite' ), home_url( '/#tabs' ), __( '
 <!-- /wp:navigation-submenu -->
 
 <?php
-$wp_elite_link( __( 'Pricing', 'wp-elite' ), '#' );
-$wp_elite_link( __( 'Blog', 'wp-elite' ), home_url( '/#blog' ) );
-$wp_elite_link( __( 'Customers', 'wp-elite' ), home_url( '/#customers' ) );
+$wp_elite_link( __( 'Pricing', 'wp-elite' ), home_url( '/pricing/' ) );
+$wp_elite_link( __( 'Blog', 'wp-elite' ), home_url( '/blog/' ) );
 ?>
+<!-- wp:navigation-submenu {"label":"<?php esc_attr_e( 'Company', 'wp-elite' ); ?>","url":"<?php echo esc_url( home_url( '/about/' ) ); ?>","kind":"custom"} -->
+<?php
+$wp_elite_link( __( 'About us', 'wp-elite' ), home_url( '/about/' ), __( 'Who we are and why we built Signalry', 'wp-elite' ) );
+$wp_elite_link( __( 'Customers', 'wp-elite' ), home_url( '/#customers' ), __( 'Teams that listen better', 'wp-elite' ) );
+$wp_elite_link( __( 'Contact', 'wp-elite' ), home_url( '/contact/' ), __( 'Talk to sales or get help', 'wp-elite' ) );
+?>
+<!-- /wp:navigation-submenu -->
 
 <!-- wp:buttons {"className":"site-header__menu-cta","layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-buttons site-header__menu-cta"><!-- wp:button {"className":"core-button--secondary"} -->
-<div class="wp-block-button core-button--secondary"><a class="wp-block-button__link wp-element-button" href="#"><?php esc_html_e( 'Sign in', 'wp-elite' ); ?></a></div>
+<div class="wp-block-button core-button--secondary"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Sign in', 'wp-elite' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#"><?php esc_html_e( 'Start free trial', 'wp-elite' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>"><?php esc_html_e( 'Start free trial', 'wp-elite' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 <!-- /wp:navigation -->
@@ -87,14 +93,14 @@ $wp_elite_link( __( 'Customers', 'wp-elite' ), home_url( '/#customers' ) );
 $wp_elite_button(
 	array(
 		'text'      => __( 'Sign in', 'wp-elite' ),
-		'link'      => array( 'url' => '#' ),
+		'link'      => array( 'url' => home_url( '/contact/' ) ),
 		'className' => 'elite-button--nav',
 	)
 );
 $wp_elite_button(
 	array(
 		'text'      => __( 'Start free', 'wp-elite' ),
-		'link'      => array( 'url' => '#' ),
+		'link'      => array( 'url' => home_url( '/pricing/' ) ),
 		'className' => 'elite-button--primary elite-button--small',
 	)
 );

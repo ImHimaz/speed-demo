@@ -108,6 +108,10 @@
 			"styles": [],
 			"modifiers": [
 				{
+					"value": "elite-div--form-card",
+					"label": "Form Card"
+				},
+				{
 					"value": "elite-div--padded",
 					"label": "Padded"
 				},
@@ -189,6 +193,10 @@
 				{
 					"value": "elite-paragraph--section-lead",
 					"label": "Section Lead"
+				},
+				{
+					"value": "elite-paragraph--tab-label",
+					"label": "Tab Label"
 				}
 			],
 			"script": false
@@ -227,6 +235,17 @@
 				{
 					"value": "elite-span--highlight",
 					"label": "Highlight"
+				}
+			],
+			"script": false
+		},
+		"elite/tab-slider": {
+			"folder": "elite-tab-slider",
+			"styles": [],
+			"modifiers": [
+				{
+					"value": "elite-tab-slider--pills",
+					"label": "Pills"
 				}
 			],
 			"script": false
@@ -329,6 +348,48 @@
 			"script": false,
 			"trigger": "elite-posts--blog"
 		},
+		"compare": {
+			"modifiers": {
+				"core/table": [
+					{
+						"value": "core-table--compare",
+						"label": "Compare Table"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--compare",
+						"label": "Compare Table › Compare Plans"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "core-table--compare"
+		},
+		"contact": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--contact-item",
+						"label": "Contact › Contact Item"
+					}
+				],
+				"elite/image": [
+					{
+						"value": "elite-image--map",
+						"label": "Contact › Map"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--contact",
+						"label": "Contact"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--contact"
+		},
 		"cta": {
 			"modifiers": {
 				"elite/div": [
@@ -403,6 +464,18 @@
 			"script": false,
 			"trigger": "elite-section--customers"
 		},
+		"demo": {
+			"modifiers": {
+				"elite/section": [
+					{
+						"value": "elite-section--demo",
+						"label": "Demo"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--demo"
+		},
 		"faq": {
 			"modifiers": {
 				"elite/accordion": [
@@ -426,6 +499,24 @@
 			},
 			"script": false,
 			"trigger": "elite-accordion--faq"
+		},
+		"features": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--feature",
+						"label": "Features › Feature"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--features",
+						"label": "Features"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--features"
 		},
 		"hero": {
 			"modifiers": {
@@ -465,6 +556,78 @@
 			"script": false,
 			"trigger": "elite-section--hero"
 		},
+		"logos": {
+			"modifiers": {
+				"elite/marquee": [
+					{
+						"value": "elite-marquee--logos",
+						"label": "Logo Row"
+					}
+				],
+				"elite/paragraph": [
+					{
+						"value": "elite-paragraph--logos-title",
+						"label": "Logo Row › Logos Title"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--logos",
+						"label": "Logo Row › Logos"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-marquee--logos"
+		},
+		"page-hero": {
+			"modifiers": {
+				"elite/section": [
+					{
+						"value": "elite-section--page-hero",
+						"label": "Page Hero"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--page-hero"
+		},
+		"pricing": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--plan-popular",
+						"label": "Pricing › Plan Popular"
+					},
+					{
+						"value": "elite-div--plan",
+						"label": "Pricing › Plan"
+					}
+				],
+				"elite/paragraph": [
+					{
+						"value": "elite-paragraph--plan-meta",
+						"label": "Pricing › Plan Meta"
+					},
+					{
+						"value": "elite-paragraph--plan-price",
+						"label": "Pricing › Plan Price"
+					},
+					{
+						"value": "elite-paragraph--plan-tag",
+						"label": "Pricing › Plan Tag"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--pricing",
+						"label": "Pricing"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--pricing"
+		},
 		"solutions": {
 			"modifiers": {
 				"elite/div": [
@@ -475,10 +638,6 @@
 				],
 				"elite/paragraph": [
 					{
-						"value": "elite-paragraph--tab-label",
-						"label": "Solutions › Tab Label"
-					},
-					{
 						"value": "elite-paragraph--tab-text",
 						"label": "Solutions › Tab Text"
 					}
@@ -487,12 +646,6 @@
 					{
 						"value": "elite-section--solutions",
 						"label": "Solutions"
-					}
-				],
-				"elite/tab-slider": [
-					{
-						"value": "elite-tab-slider--pills",
-						"label": "Solutions › Pills"
 					}
 				]
 			},
@@ -529,6 +682,36 @@
 			"script": false,
 			"trigger": "elite-section--stats"
 		},
+		"story": {
+			"modifiers": {
+				"elite/section": [
+					{
+						"value": "elite-section--story",
+						"label": "Story"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--story"
+		},
+		"team": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--member",
+						"label": "Team › Member"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--team",
+						"label": "Team"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--team"
+		},
 		"tour": {
 			"modifiers": {
 				"elite/section": [
@@ -546,9 +729,37 @@
 			},
 			"script": false,
 			"trigger": "elite-section--tour"
+		},
+		"values": {
+			"modifiers": {
+				"elite/div": [
+					{
+						"value": "elite-div--value",
+						"label": "Values › Value"
+					}
+				],
+				"elite/paragraph": [
+					{
+						"value": "elite-paragraph--value-number",
+						"label": "Values › Value Number"
+					}
+				],
+				"elite/section": [
+					{
+						"value": "elite-section--values",
+						"label": "Values"
+					}
+				]
+			},
+			"script": false,
+			"trigger": "elite-section--values"
 		}
 	},
 	"pages": {
+		"blog": {
+			"modifiers": {},
+			"script": false
+		},
 		"error404": {
 			"modifiers": {},
 			"script": false
@@ -570,6 +781,11 @@
 		}
 	},
 	"vendor": {
+		"cookie-law-info": {
+			"modifiers": {},
+			"script": false,
+			"when": "CLI_VERSION"
+		},
 		"megamenu": {
 			"modifiers": {},
 			"script": false,

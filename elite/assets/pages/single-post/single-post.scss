@@ -10,9 +10,20 @@ body.single-post {
 
 	.wp-block-post-content {
 
+		// The post's own headings: smaller than the page's section titles.
+		> h2 {
+
+			@include text-style("title-3");
+		}
+
+		> h3 {
+
+			@include text-style("title-4");
+		}
+
 		// More room above a heading than below it: it belongs to what follows.
 		> :where(h2, h3, h4) {
-			margin-top: 2.5em;
+			margin-top: 1.8em;
 		}
 
 		> :where(h2, h3, h4) + * {
@@ -69,5 +80,128 @@ body.single-post {
 	.wp-block-post-navigation-link a {
 		font-weight: 600;
 		text-decoration: none;
+	}
+
+	// The post's head (templates/single.html): category, title, then
+	// avatar · author · date · reading time, centred.
+	.post-head {
+		padding-block: 48px 32px;
+		text-align: center;
+
+		@include media-breakpoint-up(md) {
+			padding-block: 72px 40px;
+		}
+
+		.wp-block-post-title {
+			margin: 4px 0 0;
+
+			@include text-style("post-title");
+			text-wrap: balance;
+		}
+	}
+
+	// The category as an eyebrow (not the tag pills below the post).
+	.wp-block-post-terms.post-head__category {
+		display: block;
+		margin: 0;
+		color: var(--wp--preset--color--primary);
+
+		@include text-style("eyebrow");
+
+		a {
+			padding: 0;
+			background: none;
+			color: inherit;
+			text-decoration: none;
+
+			@include text-style("eyebrow");
+		}
+	}
+
+	.post-head__meta {
+		gap: 8px 14px;
+		margin-top: 22px;
+		color: var(--wp--preset--color--muted);
+
+		@include text-style("card");
+
+		> * {
+			margin: 0;
+		}
+
+		img {
+			border-radius: 50%;
+		}
+
+		.wp-block-post-author-name {
+			color: var(--wp--preset--color--contrast);
+			font-weight: 700;
+		}
+
+		.wp-block-post-date::before,
+		.elite-post-reading-time::before {
+			content: "·";
+			margin-right: 14px;
+		}
+
+		// Phones: the byline doesn't fit one line, so the reading time takes
+		// its own (centred, no dot) instead of wrapping with a stray "·".
+		@include media-breakpoint-down(md) {
+
+			.elite-post-reading-time {
+				flex-basis: 100%;
+				text-align: center;
+
+				&::before {
+					content: none;
+				}
+			}
+		}
+	}
+
+	.post-cover {
+		width: min(1040px, 100% - var(--wp--style--root--padding-left) - var(--wp--style--root--padding-right));
+		margin: 0 auto;
+
+		img {
+			border-radius: $radius-xl;
+		}
+	}
+
+	.wp-block-post-content {
+		padding-top: 48px;
+
+		@include text-style("prose");
+	}
+
+	// The author box under the post.
+	.post-author {
+		gap: 20px;
+		margin-top: 56px;
+		padding: 28px;
+		border-radius: $radius-xl;
+		background: var(--wp--preset--color--surface);
+
+		img {
+			border-radius: 50%;
+		}
+
+		// Its full size: a long bio beside it squeezed it on phones.
+		.wp-block-avatar {
+			flex: none;
+		}
+
+		.wp-block-post-author-name {
+			color: var(--wp--preset--color--contrast);
+
+			@include text-style("name");
+			font-weight: 700;
+		}
+
+		.wp-block-post-author-biography {
+			margin-top: 4px;
+
+			@include text-style("card");
+		}
 	}
 }

@@ -1,0 +1,8 @@
+// Label: Map
+// elite/image → Block Classes, under "Contact". The office map under the
+// contact cards (styled in elite-section--contact.scss).
+@use "../../styles/abstracts" as *;
+
+.elite-section--contact .elite-image--map img {
+	width: 100%;
+}

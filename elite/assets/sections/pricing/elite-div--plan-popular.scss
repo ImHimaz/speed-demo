@@ -1,0 +1,15 @@
+// Label: Plan Popular
+// elite/div → Block Classes, under "Pricing" (with "Plan"). The highlighted
+// plan: a blue border and shadow, taller on laptops.
+@use "../../styles/abstracts" as *;
+
+.elite-section--pricing .elite-div--plan-popular {
+	border: 2px solid var(--wp--preset--color--primary);
+	box-shadow: 0 30px 60px -30px rgb(14 21 37 / 0.35);
+
+	@include media-breakpoint-up(lg) {
+		margin-top: -12px;
+		height: calc(100% + 24px);
+		padding-block: 48px;
+	}
+}

@@ -1,0 +1,68 @@
+// Label: Feature
+// elite/div → Block Classes, under "Features". A bordered card: icon in a
+// tinted square (the colour follows the card's place: blue, mint, coral,
+// amber…), title and text.
+@use "sass:list";
+@use "../../styles/abstracts" as *;
+
+.elite-section--features .elite-div--feature {
+	box-sizing: border-box;
+	height: 100%;
+	padding: 28px;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: $radius-xl;
+	background: var(--wp--preset--color--base);
+	transition:
+		border-color $duration-fast $ease,
+		box-shadow $duration-fast $ease,
+		transform $duration-fast $ease;
+
+	@include media-breakpoint-up(lg) {
+		padding: 32px;
+	}
+
+	&:hover {
+		border-color: transparent;
+		box-shadow: 0 30px 60px -30px rgb(14 21 37 / 0.35);
+		transform: translateY(-3px);
+	}
+
+	.elite-icon {
+		display: grid;
+		place-items: center;
+		width: 48px;
+		height: 48px;
+		margin-bottom: 20px;
+		border-radius: $radius-lg;
+		background: var(--wp--preset--color--primary-soft);
+		color: var(--wp--preset--color--primary);
+	}
+
+	.elite-heading {
+		margin: 0;
+
+		@include text-style("title-5");
+	}
+
+	.elite-paragraph {
+		margin: 10px 0 0;
+
+		@include text-style("card");
+	}
+}
+
+// Icon tints by the card's column (the 1st and 5th blue, 2nd and 6th mint…).
+$feature-tints: (
+	2: (var(--wp--preset--color--secondary-soft), #0b8a68),
+	3: (var(--wp--preset--color--accent-soft), #e25a37),
+	4: (var(--wp--preset--color--amber-soft), #b7811b),
+	6: (var(--wp--preset--color--secondary-soft), #0b8a68),
+);
+
+@each $n, $tint in $feature-tints {
+
+	.elite-section--features .elite-column:nth-child(#{$n}) .elite-div--feature .elite-icon {
+		background: list.nth($tint, 1);
+		color: list.nth($tint, 2);
+	}
+}

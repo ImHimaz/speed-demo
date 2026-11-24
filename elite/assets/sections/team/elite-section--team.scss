@@ -1,0 +1,15 @@
+// Label: Team
+// elite/section → Block Classes. People in a grid (2 across, 4 from
+// tablets): round photo, name, role.
+@use "../../styles/abstracts" as *;
+
+.elite-section--team {
+
+	> .section-inner {
+		padding-block: var(--space-section);
+	}
+
+	.elite-row {
+		row-gap: 32px;
+	}
+}

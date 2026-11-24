@@ -1,0 +1,8 @@
+// Label: Value Number
+// elite/paragraph → Block Classes, under "Values". The card's "01", "02"…
+// (styled in elite-div--value.scss).
+@use "../../styles/abstracts" as *;
+
+.elite-section--values .elite-paragraph--value-number {
+	font-variant-numeric: tabular-nums;
+}

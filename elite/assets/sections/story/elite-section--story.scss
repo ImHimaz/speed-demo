@@ -1,0 +1,32 @@
+// Label: Story
+// elite/section → Block Classes. Text beside an image (side by side from
+// laptops); starts right under a Page Hero.
+@use "../../styles/abstracts" as *;
+
+.elite-section--story {
+
+	> .section-inner {
+		padding-block: 0 var(--space-section);
+	}
+
+	.elite-row {
+		row-gap: 40px;
+	}
+
+	.elite-heading {
+		margin: 0;
+	}
+
+	.elite-paragraph {
+		margin: 16px 0 0;
+	}
+
+	.elite-paragraph--section-lead {
+		margin-top: 20px;
+	}
+
+	.elite-image img {
+		border-radius: $radius-xl;
+		box-shadow: 0 30px 60px -30px rgb(14 21 37 / 0.35);
+	}
+}

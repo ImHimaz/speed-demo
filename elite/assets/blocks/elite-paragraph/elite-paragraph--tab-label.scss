@@ -1,0 +1,22 @@
+// Label: Tab Label
+// elite/paragraph → Block Classes. A tab's name (in a Tab Slider's
+// labels); a <small> in it is a green chip ("−20%").
+@use "../../styles/abstracts" as *;
+
+.elite-paragraph--tab-label {
+	margin: 0;
+	white-space: nowrap;
+
+	@include text-style("nav");
+	font-weight: 700;
+
+	small {
+		margin-left: 6px;
+		padding: 2px 8px;
+		border-radius: $radius-pill;
+		background: var(--wp--preset--color--secondary-soft);
+		color: #067a5b;
+
+		@include text-style("tag");
+	}
+}

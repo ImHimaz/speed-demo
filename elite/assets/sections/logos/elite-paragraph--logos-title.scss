@@ -1,0 +1,12 @@
+// Label: Logos Title
+// elite/paragraph → Block Classes, under "Logos". The line over the logos.
+@use "../../styles/abstracts" as *;
+
+.elite-section--logos .elite-paragraph--logos-title {
+	margin: 0 0 24px;
+	color: var(--wp--preset--color--muted);
+	text-align: center;
+
+	@include text-style("small");
+	font-weight: 700;
+}

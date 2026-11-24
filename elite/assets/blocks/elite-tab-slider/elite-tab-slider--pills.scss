@@ -1,9 +1,10 @@
 // Label: Pills
-// elite/tab-slider → Block Classes, under "Solutions". The tab row as a
-// grey pill bar, centred; the active tab a white pill with a shadow.
+// elite/tab-slider → Block Classes. The tab row as a grey pill bar,
+// centred; the active tab a white pill with a shadow (Solutions' teams,
+// Pricing's Monthly / Yearly).
 @use "../../styles/abstracts" as *;
 
-.elite-section--solutions .elite-tab-slider--pills {
+.elite-tab-slider--pills {
 	--ts-gap: 32px;
 
 	.elite-tab-slider__nav {
@@ -30,6 +31,20 @@
 			background: var(--wp--preset--color--base);
 			box-shadow: 0 6px 20px -10px rgb(14 21 37 / 0.35);
 			color: var(--wp--preset--color--contrast);
+		}
+	}
+
+	// Phones: tighter tabs; a long label wraps onto two lines (with tabs in
+	// view set to fit them all, e.g. Solutions' three).
+	@include media-breakpoint-down(md) {
+
+		.elite-tab-slider__tab {
+			padding: 10px 8px;
+		}
+
+		.elite-paragraph--tab-label {
+			white-space: normal;
+			text-align: center;
 		}
 	}
 }

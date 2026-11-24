@@ -1,0 +1,16 @@
+// Label: Values
+// elite/section → Block Classes. Numbered cards on a grey band (3 across
+// from tablets).
+@use "../../styles/abstracts" as *;
+
+.elite-section--values {
+	background: var(--wp--preset--color--surface);
+
+	> .section-inner {
+		padding-block: var(--space-section);
+	}
+
+	.elite-row {
+		row-gap: 20px;
+	}
+}

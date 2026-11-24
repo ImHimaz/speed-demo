@@ -27,8 +27,8 @@ $wp_elite_paragraph = static function ( string $html, string $modifier ): void {
 /**
  * A link column: an Elite Column with an Elite Heading and a core List.
  *
- * @param string       $title Heading.
- * @param list<string> $links Link labels (demo links).
+ * @param string                $title Heading.
+ * @param array<string, string> $links Link labels => URLs.
  */
 $wp_elite_column = static function ( string $title, array $links ): void {
 	echo "<!-- wp:elite/column {\"size\":{\"mobile\":{\"width\":6},\"tablet\":{\"width\":3}}} -->\n<div class=\"elite-column col-6 col-md-3\"><div class=\"column-inner\">";
@@ -37,8 +37,8 @@ $wp_elite_column = static function ( string $title, array $links ): void {
 		esc_html( $title )
 	);
 	echo "<!-- wp:list {\"className\":\"core-list\\u002d\\u002dfooter-links\"} -->\n<ul class=\"wp-block-list core-list--footer-links\">";
-	foreach ( $links as $label ) {
-		printf( "<!-- wp:list-item -->\n<li><a href=\"#\">%s</a></li>\n<!-- /wp:list-item -->\n\n", esc_html( $label ) );
+	foreach ( $links as $label => $url ) {
+		printf( "<!-- wp:list-item -->\n<li><a href=\"%1\$s\">%2\$s</a></li>\n<!-- /wp:list-item -->\n\n", esc_url( $url ), esc_html( $label ) );
 	}
 	echo "</ul>\n<!-- /wp:list --></div></div>\n<!-- /wp:elite/column -->\n\n";
 };
@@ -82,10 +82,43 @@ $wp_elite_social( 'youtube', __( 'YouTube', 'wp-elite' ) );
 <div class="elite-column col-12 col-lg-8"><div class="column-inner"><!-- wp:elite/row -->
 <div class="elite-row row">
 <?php
-$wp_elite_column( __( 'Product', 'wp-elite' ), array( __( 'Feedback inbox', 'wp-elite' ), __( 'AI insights', 'wp-elite' ), __( 'Roadmaps', 'wp-elite' ), __( 'Integrations', 'wp-elite' ), __( 'Pricing', 'wp-elite' ) ) );
-$wp_elite_column( __( 'Solutions', 'wp-elite' ), array( __( 'Product teams', 'wp-elite' ), __( 'Support teams', 'wp-elite' ), __( 'Marketing teams', 'wp-elite' ), __( 'Enterprise', 'wp-elite' ) ) );
-$wp_elite_column( __( 'Resources', 'wp-elite' ), array( __( 'Blog', 'wp-elite' ), __( 'Guides', 'wp-elite' ), __( 'Help centre', 'wp-elite' ), __( 'API docs', 'wp-elite' ) ) );
-$wp_elite_column( __( 'Company', 'wp-elite' ), array( __( 'About', 'wp-elite' ), __( 'Careers', 'wp-elite' ), __( 'Contact', 'wp-elite' ), __( 'Security', 'wp-elite' ) ) );
+$wp_elite_column(
+	__( 'Product', 'wp-elite' ),
+	array(
+		__( 'Feedback inbox', 'wp-elite' ) => home_url( '/#features' ),
+		__( 'AI insights', 'wp-elite' )    => home_url( '/#features' ),
+		__( 'Roadmaps', 'wp-elite' )       => home_url( '/#features' ),
+		__( 'Integrations', 'wp-elite' )   => home_url( '/#features' ),
+		__( 'Pricing', 'wp-elite' )        => home_url( '/pricing/' ),
+	)
+);
+$wp_elite_column(
+	__( 'Solutions', 'wp-elite' ),
+	array(
+		__( 'Product teams', 'wp-elite' )   => home_url( '/#tabs' ),
+		__( 'Support teams', 'wp-elite' )   => home_url( '/#tabs' ),
+		__( 'Marketing teams', 'wp-elite' ) => home_url( '/#tabs' ),
+		__( 'Enterprise', 'wp-elite' )      => home_url( '/contact/' ),
+	)
+);
+$wp_elite_column(
+	__( 'Resources', 'wp-elite' ),
+	array(
+		__( 'Blog', 'wp-elite' )        => home_url( '/blog/' ),
+		__( 'Guides', 'wp-elite' )      => home_url( '/category/guides/' ),
+		__( 'Help centre', 'wp-elite' ) => home_url( '/category/guides/' ),
+		__( 'API docs', 'wp-elite' )    => home_url( '/category/guides/' ),
+	)
+);
+$wp_elite_column(
+	__( 'Company', 'wp-elite' ),
+	array(
+		__( 'About', 'wp-elite' )    => home_url( '/about/' ),
+		__( 'Careers', 'wp-elite' )  => home_url( '/about/' ),
+		__( 'Contact', 'wp-elite' )  => home_url( '/contact/' ),
+		__( 'Security', 'wp-elite' ) => home_url( '/about/' ),
+	)
+);
 ?>
 </div>
 <!-- /wp:elite/row --></div></div>

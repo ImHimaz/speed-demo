@@ -5,6 +5,14 @@
 @use "../../styles/abstracts" as *;
 
 .elite-section--cta .elite-div--cta-actions {
+	margin-top: 32px;
+
+	> .div-inner {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		justify-content: center;
+	}
 
 	.elite-button,
 	.elite-button__link {

@@ -1,0 +1,20 @@
+// Label: Plan Price
+// elite/paragraph → Block Classes, under "Pricing". The price large (in
+// <strong>), "/ month" small beside it.
+@use "../../styles/abstracts" as *;
+
+.elite-section--pricing .elite-paragraph--plan-price {
+	display: flex;
+	gap: 6px;
+	align-items: baseline;
+	margin: 24px 0 4px;
+	color: var(--wp--preset--color--muted);
+
+	@include text-style("card");
+
+	strong {
+		color: var(--wp--preset--color--contrast);
+
+		@include text-style("price");
+	}
+}

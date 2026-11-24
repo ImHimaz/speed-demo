@@ -6,3 +6,12 @@
 .elite-section--solutions > .section-inner {
 	padding-block: var(--space-section);
 }
+
+// Phones: the team tabs share the full width (three in view, set on the
+// block), so none is cut off.
+@include media-breakpoint-down(md) {
+
+	.elite-section--solutions .elite-tab-slider--pills .elite-tab-slider__nav {
+		justify-self: stretch;
+	}
+}

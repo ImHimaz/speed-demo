@@ -1,25 +1,39 @@
 <!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
 
 <!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
-<main class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:post-title {"level":1} /-->
+<main class="wp-block-group"><!-- wp:group {"className":"post-head","layout":{"type":"constrained","contentSize":"760px"}} -->
+<div class="wp-block-group post-head"><!-- wp:post-terms {"term":"category","className":"post-head__category"} /-->
 
-<!-- wp:post-date {"fontSize":"small","textColor":"muted"} /-->
+<!-- wp:post-title {"level":1} /-->
 
-<!-- wp:post-featured-image {"align":"wide","aspectRatio":"16/9"} /--></div>
+<!-- wp:group {"className":"post-head__meta","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"}} -->
+<div class="wp-block-group post-head__meta"><!-- wp:avatar {"size":36} /-->
+
+<!-- wp:post-author-name /-->
+
+<!-- wp:post-date /-->
+
+<!-- wp:elite/post-reading-time /--></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+<!-- wp:post-featured-image {"aspectRatio":"16/9","className":"post-cover"} /-->
 
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:post-terms {"term":"post_tag"} /-->
+<!-- wp:post-content {"layout":{"type":"constrained","contentSize":"760px"}} /-->
 
-<!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
-<div class="wp-block-group"><!-- wp:post-navigation-link {"type":"previous"} /-->
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"760px"}} -->
+<div class="wp-block-group"><!-- wp:group {"className":"post-author","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group post-author"><!-- wp:avatar {"size":72} /-->
 
-<!-- wp:post-navigation-link /--></div>
+<!-- wp:group {"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:post-author-name /-->
+
+<!-- wp:post-author-biography /--></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></main>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:pattern {"slug":"wp-elite/section-related"} /--></main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->

@@ -1,0 +1,21 @@
+// Label: Logo Row
+// elite/marquee → Block Classes, under "Logos". Logos muted and grey,
+// in colour on hover; sizes and gaps are the block's own settings.
+@use "../../styles/abstracts" as *;
+
+.elite-section--logos .elite-marquee--logos .elite-marquee__group > .elite-image {
+	opacity: 0.55;
+	filter: grayscale(1);
+	transition:
+		filter $duration-fast $ease,
+		opacity $duration-fast $ease;
+
+	&:hover {
+		opacity: 1;
+		filter: none;
+	}
+
+	img {
+		width: auto;
+	}
+}

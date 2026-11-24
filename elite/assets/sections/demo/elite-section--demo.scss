@@ -1,0 +1,39 @@
+// Label: Demo
+// elite/section → Block Classes. "Book a demo": a navy band with blue and
+// mint glows, the pitch on the left and a form card on the right (from
+// laptops).
+@use "../../styles/abstracts" as *;
+
+.elite-section--demo {
+	background:
+		radial-gradient(ellipse 60% 80% at 100% 0%, rgb(61 90 254 / 0.45), transparent 70%),
+		radial-gradient(ellipse 50% 70% at 0% 100%, rgb(22 199 154 / 0.25), transparent 70%),
+		var(--wp--preset--color--navy);
+	color: #c9d1e6;
+
+	> .section-inner {
+		padding-block: var(--space-section);
+	}
+
+	.elite-row {
+		row-gap: 40px;
+	}
+
+	.elite-heading {
+		margin: 0;
+		color: var(--wp--preset--color--base);
+	}
+
+	.elite-paragraph--eyebrow {
+		color: var(--wp--preset--color--secondary);
+	}
+
+	.elite-paragraph--section-lead {
+		margin-top: 16px;
+		color: #c9d1e6;
+	}
+
+	.core-list--checks li {
+		color: var(--wp--preset--color--base);
+	}
+}

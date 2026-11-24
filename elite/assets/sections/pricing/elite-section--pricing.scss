@@ -1,0 +1,24 @@
+// Label: Pricing
+// elite/section → Block Classes. Plans in a Monthly / Yearly tab slider
+// (Pills, fade): three cards, the middle one highlighted, and a note under
+// them.
+@use "../../styles/abstracts" as *;
+
+.elite-section--pricing {
+
+	> .section-inner {
+		padding-block: var(--space-section);
+	}
+
+	&.is-flush-top > .section-inner {
+		padding-top: 0;
+	}
+
+	// Room above the cards for the "Most popular" tag (the tab slider
+	// clips what's outside its panels; the popular card also rises 12px).
+	.elite-tab-slider .elite-row {
+		row-gap: 20px;
+		padding-top: 28px;
+		padding-bottom: 16px;
+	}
+}

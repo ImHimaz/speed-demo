@@ -1,0 +1,44 @@
+// Label: Contact Item
+// elite/div → Block Classes, under "Contact". A bordered card: an icon in a
+// blue square, then a bold label over the details.
+@use "../../styles/abstracts" as *;
+
+.elite-section--contact .elite-div--contact-item {
+	padding: 20px;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: $radius-xl;
+
+	& + & {
+		margin-top: 14px;
+	}
+
+	> .div-inner {
+		display: flex;
+		gap: 16px;
+	}
+
+	.elite-icon {
+		display: grid;
+		flex: none;
+		place-items: center;
+		width: 44px;
+		height: 44px;
+		border-radius: $radius-lg;
+		background: var(--wp--preset--color--primary-soft);
+		color: var(--wp--preset--color--primary);
+	}
+
+	.elite-paragraph {
+		margin: 0;
+		color: var(--wp--preset--color--muted);
+
+		@include text-style("card");
+
+		strong {
+			display: block;
+			color: var(--wp--preset--color--contrast);
+
+			@include text-style("field");
+		}
+	}
+}

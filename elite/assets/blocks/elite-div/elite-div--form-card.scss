@@ -1,0 +1,153 @@
+// Label: Form Card
+// elite/div → Block Classes (Demo, Contact, About). A white card with
+// a shadow around a form: title, a line, then the form (Contact Form 7's
+// markup: two fields a row from 640px, labels over inputs, a consent line,
+// a full-width button).
+@use "../../styles/abstracts" as *;
+
+.elite-div--form-card {
+	padding: 28px;
+	border-radius: $radius-xl;
+	background: var(--wp--preset--color--base);
+	box-shadow: 0 30px 60px -30px rgb(14 21 37 / 0.35);
+	color: var(--wp--preset--color--body-text);
+
+	@media (min-width: 640px) {
+		padding: 36px;
+	}
+
+	// (> .div-inner >: beats the dark sections' white headings.)
+	> .div-inner > .elite-heading {
+		margin: 0 0 6px;
+		color: var(--wp--preset--color--contrast);
+
+		@include text-style("title-4");
+	}
+
+	> .div-inner > .elite-paragraph {
+		margin: 0 0 20px;
+		color: var(--wp--preset--color--muted);
+
+		@include text-style("card");
+	}
+
+	// Contact Form 7
+	.wpcf7-form {
+		display: grid;
+		gap: 16px;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.form__row {
+		display: grid;
+		gap: 16px;
+
+		@media (min-width: 640px) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	label {
+		display: block;
+		color: var(--wp--preset--color--contrast);
+
+		@include text-style("label");
+		font-weight: 700;
+	}
+
+	.wpcf7-form-control-wrap {
+		display: block;
+		margin-top: 6px;
+	}
+
+	:is(input[type="text"], input[type="email"], select, textarea) {
+		box-sizing: border-box;
+		width: 100%;
+		min-height: 48px;
+		padding: 12px 14px;
+		border: 1px solid #cfd5e1;
+		border-radius: 10px;
+		background: var(--wp--preset--color--base);
+		color: var(--wp--preset--color--contrast);
+
+		@include text-style("field");
+		transition:
+			border-color $duration-fast $ease,
+			box-shadow $duration-fast $ease;
+
+		&:focus {
+			border-color: var(--wp--preset--color--primary);
+			outline: 0;
+			box-shadow: 0 0 0 4px var(--wp--preset--color--primary-soft);
+		}
+	}
+
+	textarea {
+		min-height: 120px;
+		resize: vertical;
+	}
+
+	.form__consent {
+
+		.wpcf7-list-item {
+			margin: 0;
+		}
+
+		label {
+			display: flex;
+			gap: 10px;
+			align-items: flex-start;
+			color: var(--wp--preset--color--muted);
+
+			@include text-style("fine");
+			font-weight: 400;
+			line-height: 1.5;
+		}
+
+		input {
+			flex: none;
+			width: 18px;
+			height: 18px;
+			margin: 2px 0 0;
+			accent-color: var(--wp--preset--color--primary);
+		}
+	}
+
+	.wpcf7-submit {
+		width: 100%;
+		min-height: 48px;
+		padding: 0 22px;
+		border: 0;
+		border-radius: 10px;
+		background: var(--wp--preset--color--primary);
+		color: var(--wp--preset--color--base);
+
+		@include text-style("card");
+		font-weight: 700;
+		cursor: pointer;
+		transition: background-color $duration-fast $ease;
+
+		&:hover {
+			background: var(--wp--preset--color--primary-dark);
+		}
+
+		@include media-breakpoint-up(md) {
+			min-height: 52px;
+
+			@include text-style("field");
+		}
+	}
+
+	.wpcf7-spinner {
+		position: absolute;
+	}
+
+	.wpcf7-response-output {
+		margin: 0;
+
+		@include text-style("label");
+	}
+}

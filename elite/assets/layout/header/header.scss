@@ -9,9 +9,20 @@
 $header-height: 68px;
 $header-height-lg: 76px;
 
-// Section links (#tabs, #blog…) land below the sticky header.
-html {
-	scroll-padding-top: $header-height-lg + 8px;
+// Section links (#tabs, #blog…), and keyboard focus scrolling to an element,
+// land below the sticky header. A margin on the page's own content, not
+// scroll-padding on the page: with scroll-padding, focus moving into the
+// open menu and back to the menu button (both at the very top) scrolled the
+// page up each time the menu opened or closed.
+:where(main, footer),
+:where(main, footer) * {
+	scroll-margin-top: $header-height-lg + 8px;
+}
+
+// No block gap under the header: the first section (a banner) starts right
+// under it.
+.wp-site-blocks > .site-header + * {
+	margin-block-start: 0;
 }
 
 .site-header {
@@ -219,6 +230,7 @@ html {
 				width: 12px;
 				height: 12px;
 				stroke-width: 2;
+				transition: transform $duration-fast $ease;
 			}
 		}
 

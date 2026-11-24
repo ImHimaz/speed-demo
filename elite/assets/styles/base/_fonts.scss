@@ -1,0 +1,17 @@
+// A fallback sized like the body font. Until Manrope arrives (font-display:
+// swap), text is drawn in this: Arial, or Helvetica on Apple devices (the
+// same metrics), scaled to Manrope's average width and line height, so the
+// swap to Manrope moves nothing. It is the second name in the Body family
+// (theme.json).
+
+// Values: Manrope at weight 400 against Arial, average width over English
+// letter frequencies (the method Next.js and Capsize use). A different body
+// font needs its own values.
+@font-face {
+	font-family: "Manrope Fallback";
+	src: local("Arial"), local("ArialMT"), local("Helvetica"), local("Helvetica Neue");
+	size-adjust: 103.53%;
+	ascent-override: 102.96%;
+	descent-override: 28.98%;
+	line-gap-override: 0%;
+}

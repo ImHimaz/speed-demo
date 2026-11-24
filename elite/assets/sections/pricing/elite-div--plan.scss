@@ -1,0 +1,54 @@
+// Label: Plan
+// elite/div → Block Classes, under "Pricing". A plan card: name, who it's
+// for, price, a note, a full-width button and the checks list. Add "Plan
+// Popular" for the highlighted card.
+@use "../../styles/abstracts" as *;
+
+.elite-section--pricing .elite-div--plan {
+	position: relative;
+	box-sizing: border-box;
+	height: 100%;
+	padding: 32px 28px;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: $radius-xl;
+	background: var(--wp--preset--color--base);
+
+	@include media-breakpoint-up(lg) {
+		padding: 36px 32px;
+	}
+
+	> .div-inner {
+		position: static;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.elite-heading {
+		margin: 0;
+
+		@include text-style("title-5");
+	}
+
+	.elite-button {
+		width: 100%;
+		margin-top: 24px;
+
+		.elite-button__link {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+
+	.core-list--checks {
+		margin: 28px 0 0;
+		padding-top: 24px;
+		border-top: 1px solid var(--wp--preset--color--line);
+
+		@include text-style("card");
+
+		li {
+			color: var(--wp--preset--color--body-text);
+			font-weight: 550;
+		}
+	}
+}

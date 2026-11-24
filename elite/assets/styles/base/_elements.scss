@@ -23,6 +23,15 @@ html {
 	clip-path: none;
 }
 
+// WordPress's own buttons (Search…) fade to their hover colours like the
+// theme's (theme.json sets the colours but can't set a transition).
+:where(.wp-element-button) {
+	transition:
+		background-color $duration-fast $ease,
+		border-color $duration-fast $ease,
+		color $duration-fast $ease;
+}
+
 // Section rhythm: the space above and below each home page section
 // (sections use it on .section-inner).
 :root {

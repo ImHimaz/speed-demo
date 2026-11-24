@@ -1,0 +1,7 @@
+// Label: Compare Plans
+// elite/section → Block Classes. A head and the plans' feature table.
+@use "../../styles/abstracts" as *;
+
+.elite-section--compare > .section-inner {
+	padding-block: var(--space-section);
+}

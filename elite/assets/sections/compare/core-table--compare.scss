@@ -1,0 +1,132 @@
+// Label: Compare Table
+// core/table → Block Classes, under "Compare Plans". A bordered, rounded
+// table; group rows (a row whose only cell is bold) in blue capitals; ✓
+// shows as a mint tick, — in grey. Phones: each feature on its own line with
+// the three plans' values in columns under the heads, so every plan shows
+// without scrolling sideways; from md a normal table.
+@use "../../styles/abstracts" as *;
+
+.elite-section--compare .core-table--compare {
+	margin: 0;
+	overflow: hidden;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: $radius-xl;
+
+	table {
+		display: block;
+		width: 100%;
+		border-collapse: collapse;
+
+		@include text-style("card");
+	}
+
+	thead,
+	tbody {
+		display: block;
+	}
+
+	tr {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(min-content, 1fr));
+	}
+
+	:is(th, td) {
+		padding: 12px 10px;
+		border: 0;
+		border-bottom: 1px solid var(--wp--preset--color--line);
+		text-align: center;
+
+		// The feature (or the head's "Feature"): a line of its own.
+		&:first-child {
+			grid-column: 1 / -1;
+			padding-bottom: 4px;
+			border-bottom: 0;
+			color: var(--wp--preset--color--contrast);
+			font-weight: 600;
+			text-align: left;
+		}
+	}
+
+	tbody td:not(:first-child) {
+		padding-top: 4px;
+	}
+
+	// The head's "Feature" says nothing on phones: the plans' names only.
+	thead th:first-child {
+		display: none;
+	}
+
+	// A group row's empty cells.
+	td:empty {
+		display: none;
+	}
+
+	@include media-breakpoint-up(md) {
+
+		table {
+			display: table;
+		}
+
+		thead {
+			display: table-header-group;
+		}
+
+		tbody {
+			display: table-row-group;
+		}
+
+		tr {
+			display: table-row;
+		}
+
+		// (The phone selectors again, to match their weight.)
+		:is(th, td),
+		:is(th, td):first-child,
+		thead th:first-child,
+		tbody td:not(:first-child),
+		td:empty {
+			display: table-cell;
+			padding: 16px 20px;
+			border-bottom: 1px solid var(--wp--preset--color--line);
+		}
+	}
+
+	thead {
+		border: 0;
+
+		th {
+			background: var(--wp--preset--color--surface);
+			color: var(--wp--preset--color--contrast);
+		}
+	}
+
+	tr:last-child td {
+		border-bottom: 0;
+	}
+
+	// Group rows: one bold cell, the rest empty.
+	td strong {
+		display: block;
+		padding-top: 8px;
+		color: var(--wp--preset--color--primary);
+
+		@include text-style("eyebrow");
+	}
+
+	// ✓ / — as typed in the table.
+	mark {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		overflow: hidden;
+		border-radius: 50%;
+		background: var(--wp--preset--color--secondary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 20px no-repeat;
+		color: transparent;
+		vertical-align: middle;
+	}
+
+	s {
+		color: #b7bdca;
+		text-decoration: none;
+	}
+}

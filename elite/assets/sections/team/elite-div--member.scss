@@ -1,0 +1,30 @@
+// Label: Member
+// elite/div → Block Classes, under "Team". A person: round photo (up to
+// 160px), name and role, centred.
+@use "../../styles/abstracts" as *;
+
+.elite-section--team .elite-div--member {
+	text-align: center;
+
+	.elite-image {
+		max-width: 160px;
+		margin: 0 auto 16px;
+
+		img {
+			border-radius: 50%;
+		}
+	}
+
+	.elite-heading {
+		margin: 0;
+
+		@include text-style("name");
+	}
+
+	.elite-paragraph {
+		margin: 4px 0 0;
+		color: var(--wp--preset--color--muted);
+
+		@include text-style("small");
+	}
+}

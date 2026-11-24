@@ -6,7 +6,23 @@
 @use "../../styles/abstracts" as *;
 
 .elite-section--cta {
+	background:
+		radial-gradient(ellipse 60% 80% at 100% 0%, rgb(61 90 254 / 0.45), transparent 70%),
+		radial-gradient(ellipse 50% 70% at 0% 100%, rgb(22 199 154 / 0.25), transparent 70%),
+		var(--wp--preset--color--navy);
+	color: #c9d1e6;
 	text-align: center;
+
+	.elite-heading {
+		margin: 0;
+		color: var(--wp--preset--color--base);
+	}
+
+	.elite-paragraph--section-lead {
+		max-width: 600px;
+		margin: 16px auto 0;
+		color: #c9d1e6;
+	}
 
 	// Padding: on .section-inner (Elite Section). Spacing set in the CMS wins.
 	.section-inner {

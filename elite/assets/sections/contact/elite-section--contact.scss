@@ -1,0 +1,24 @@
+// Label: Contact
+// elite/section → Block Classes. The contact page: a form card on the left,
+// contact cards and a map on the right (from laptops); starts right under
+// a Page Hero.
+@use "../../styles/abstracts" as *;
+
+.elite-section--contact {
+
+	> .section-inner {
+		padding-block: 0 var(--space-section);
+	}
+
+	.elite-row {
+		row-gap: 40px;
+	}
+
+	.elite-image--map {
+		margin-top: 14px;
+
+		img {
+			border-radius: $radius-xl;
+		}
+	}
+}

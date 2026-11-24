@@ -5,7 +5,11 @@
 	"testsEnvironment": false,
 	"port": 8894,
 	"plugins": [
-		"../../elite-blocks"
+		"../../elite-blocks",
+		"https://downloads.wordpress.org/plugin/wordpress-seo.28.8.zip",
+		"https://downloads.wordpress.org/plugin/contact-form-7.6.2.4.1.zip",
+		"https://downloads.wordpress.org/plugin/duracelltomi-google-tag-manager.2.1.1.zip",
+		"https://downloads.wordpress.org/plugin/cookie-law-info.3.5.8.zip"
 	],
 	"config": {
 		"WP_DEBUG": true,
@@ -17,7 +21,8 @@
 	"mappings": {
 		"wp-content/themes/signalry": ".",
 		"demo-media": "../design",
-		"demo-content": "../content"
+		"demo-content": "../content",
+		"wp-content/mu-plugins": "../content/mu-plugins"
 	},
 	"lifecycleScripts": {
 		"afterStart": "wp-env run cli wp theme activate signalry"

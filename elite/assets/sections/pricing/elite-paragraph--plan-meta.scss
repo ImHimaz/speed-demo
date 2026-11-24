@@ -1,0 +1,26 @@
+// Label: Plan Meta
+// elite/paragraph → Block Classes, under "Pricing". The grey lines on a
+// plan: who it's for, the volume under the price; and the note under the
+// cards (centred there).
+@use "../../styles/abstracts" as *;
+
+.elite-section--pricing .elite-paragraph--plan-meta {
+	min-height: 22px;
+	margin: 6px 0 0;
+	color: var(--wp--preset--color--muted);
+
+	@include text-style("card");
+
+	.elite-paragraph--plan-price + & {
+		margin: 0;
+
+		@include text-style("small");
+	}
+}
+
+.elite-section--pricing > .section-inner > .container > .elite-paragraph--plan-meta {
+	margin-top: 28px;
+
+	@include text-style("small");
+	text-align: center;
+}

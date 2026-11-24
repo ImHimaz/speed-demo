@@ -38,21 +38,37 @@
 		grid-row: 3;
 		grid-column: 1;
 		justify-self: center;
-		gap: 8px;
-		margin-top: 28px;
+		gap: 16px;
+		margin-top: 20px;
 	}
 
+	// The dot looks 8px but its button is 24px tall (the background stops at
+	// the padding) and dots sit 24px apart centre to centre: a comfortable
+	// tap target (WCAG 2.5.8) with the same look.
 	.elite-slider__dot {
 		width: 8px;
-		height: 8px;
+		height: 24px;
 		margin: 0;
-		border-radius: 9px;
-		background: #c9cfdb;
+		overflow: visible;
+		border-radius: 0;
+		background: none;
 		opacity: 1;
-		transition: width $duration-fast $ease, background-color $duration-fast $ease;
+		transition: width $duration-fast $ease;
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 8px 0;
+			border-radius: 9px;
+			background: #c9cfdb;
+			transition: background-color $duration-fast $ease;
+		}
 
 		&.is-active {
 			width: 26px;
+		}
+
+		&.is-active::before {
 			background: var(--wp--preset--color--primary);
 		}
 	}

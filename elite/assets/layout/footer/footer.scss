@@ -12,3 +12,9 @@
 		color: var(--wp--preset--color--base);
 	}
 }
+
+// No block gap above the footer: a dark section ending the page meets it
+// edge to edge.
+.wp-site-blocks > .site-footer {
+	margin-block-start: 0;
+}

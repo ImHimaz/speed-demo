@@ -1,0 +1,13 @@
+// CookieYes (cookie-law-info), loaded only when the plugin is active.
+// Active when: CLI_VERSION
+
+// While the mobile menu is open (WordPress puts has-modal-open on <html>),
+// the consent box and its re-open button step aside: on phones the box
+// covered half the menu. They come back as soon as the menu closes.
+html.has-modal-open {
+
+	.cky-consent-container,
+	.cky-btn-revisit-wrapper {
+		visibility: hidden;
+	}
+}

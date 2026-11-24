@@ -1,0 +1,31 @@
+// Label: Value
+// elite/div → Block Classes, under "Values". A white card: a big blue
+// number, title and text.
+@use "../../styles/abstracts" as *;
+
+.elite-section--values .elite-div--value {
+	box-sizing: border-box;
+	height: 100%;
+	padding: 28px;
+	border-radius: $radius-xl;
+	background: var(--wp--preset--color--base);
+
+	.elite-paragraph--value-number {
+		margin: 0 0 14px;
+		color: var(--wp--preset--color--primary);
+
+		@include text-style("number");
+	}
+
+	.elite-heading {
+		margin: 0;
+
+		@include text-style("title-5");
+	}
+
+	.elite-paragraph:not(.elite-paragraph--value-number) {
+		margin: 10px 0 0;
+
+		@include text-style("card");
+	}
+}
